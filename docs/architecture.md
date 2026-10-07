@@ -5,6 +5,10 @@ commands to the system's UART receiver. The controller coordinates register
 access and ALU operations, then returns response data through a transmit FIFO
 and UART transmitter.
 
+The repository overview uses the original top-level system diagram from
+[`Final_System.pdf`](Final_System.pdf), extracted as
+[`images/system-top.png`](images/system-top.png).
+
 ## Functional blocks
 
 | Block | Implementation | Responsibility |

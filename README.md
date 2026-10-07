@@ -22,22 +22,9 @@ register file, an 8-entry asynchronous FIFO, and a 16-bit ALU result.
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    HOST[UART master] --> RX[UART receiver]
-    RX --> SYNC[Data synchronizer]
-    SYNC --> CTRL[System controller<br/>REF_CLK]
-    CTRL <--> RF[Register file]
-    RF --> ALU[ALU<br/>gated REF_CLK]
-    ALU --> CTRL
-    CTRL --> FIFO[Async FIFO<br/>REF_CLK to TX clock]
-    FIFO --> TX[UART transmitter]
-    TX --> HOST
-    CFG[Register-file configuration] --> DIV[Clock dividers]
-    UARTCLK[UART_CLK] --> DIV
-    DIV --> RX
-    DIV --> TX
-```
+![Original system-level block diagram from the design document, showing the controller, register file, ALU, UART, asynchronous FIFO, clocking, and reset paths](docs/images/system-top.png)
+
+*System-level block diagram reproduced from the supplied design document.*
 
 | Block | Role |
 | --- | --- |
