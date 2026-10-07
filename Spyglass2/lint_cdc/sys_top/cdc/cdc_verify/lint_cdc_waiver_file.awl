@@ -1,0 +1,4 @@
+waive -rule {  {Ac_cdc01a}  }  -comment {Created by ICer on 07-Oct-2026 22:25:52}  -exact 
+waive -rule {  {Ac_datahold01a}  }  -comment {Created by ICer on 07-Oct-2026 22:27:45}  -exact 
+waive -rule {  {Propagate_Clocks}  }  -comment {Created by ICer on 07-Oct-2026 22:27:52}  -exact 
+waive -rule {  {Reset_sync04}  }  -comment {Created by ICer on 07-Oct-2026 22:28:03}  -exact 

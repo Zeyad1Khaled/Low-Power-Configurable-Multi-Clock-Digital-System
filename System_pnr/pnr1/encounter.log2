@@ -1,0 +1,481 @@
+Checking out Encounter license ...
+SOC_Encounter_GXL 8.1 license checkout succeeded.
+This Encounter release has been compiled with OA version 22.04-p032.
+sourcing /usr/Cadence/SOC/etc/fe/rdaDSL.tcl
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2008.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: First Encounter v08.10-p004_1 (32bit) 11/04/2008 14:34 (Linux 2.6)
+@(#)CDS: NanoRoute v08.10-p008 NR081027-0018/USR58-UB (database version 2.30, 67.1.1) {superthreading v1.11}
+@(#)CDS: CeltIC v08.10-p002_1 (32bit) 10/23/2008 22:04:14 (Linux 2.6.9-67.0.10.ELsmp)
+@(#)CDS: CTE v08.10-p016_1 (32bit) Oct 26 2008 15:11:51 (Linux 2.6.9-67.0.10.ELsmp)
+@(#)CDS: CPE v08.10-p009
+--- Starting "First Encounter v08.10-p004_1" on Tue Oct  6 21:43:03 2026 (mem=62.2M) ---
+--- Running on linux.local (x86_64 w/Linux 2.6.32-431.29.2.el6.x86_64) ---
+This version was compiled on Tue Nov 4 14:34:21 PST 2008.
+Set DBUPerIGU to 1000.
+Set Default Mode Total Cap Scale Factor to 1.00
+Set Detail Mode Total Cap Scale Factor to 1.00
+Set Coupling Total Cap Scale Factor to 1.00
+Set Total Res Scale Factor to 1.00
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> encMessage info 0
+Reading config file - /home/ahesham/Projects/System/System_pnr/pnr/sys_top_signoff.enc.dat/sys_top.conf
+**WARN: (SOCLF-246):	The 'UNITS' attribute should be set
+in the first lef file (technology lef). There is an attempt to set it
+in subsequent lef files which will be ignored.
+**WARN: (SOCLF-46):	Class CORE macro 'sys_top' has no SITE statement defined.
+Class CORE macros require a SITE statement. The SITE FE_CORE_0 was
+created and will be used for this macro, using height 180.6000 that
+matches the macro SIZE height, and width 0.4100 that matches the
+m2 routing pitch. Define the site explicitly in the LEF file, to
+this message in the future.
+**WARN: (SOCSYC-2):	Timing is not defined for cell sys_top.
+*** End library_loading (cpu=0.10min, mem=91.0M, fe_cpu=0.13min, fe_mem=280.3M) ***
+**WARN: (TCLCMD-1013):	The SDC set_operating_conditions assertion is not supported. Please use the Encounter setOpCond command to specify library and operating condition information. Use the setAnalysisMode command to control single vs. bestCase/worstCase vs. on-chip variation timing analysis. (File /home/ahesham/Projects/System/System_pnr/pnr/../DFT/sdc/sys_top_DFT.sdc, Line 12).
+
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (TCLCMD-1068):	One or more of the target pins given with create_clock/create_generated_clock for clock 'Gated_clk' are hierarchical pins. Tool has mapped these hierarchical pins to their respective flat pin(s). 'report_clocks -clocks' can be used to know the mapped flat pins for given clock. (File /home/ahesham/Projects/System/System_pnr/pnr/../DFT/sdc/sys_top_DFT.sdc, Line 48).
+
+**WARN: (TCLCMD-1068):	One or more of the target pins given with create_clock/create_generated_clock for clock 'Tx_clk' are hierarchical pins. Tool has mapped these hierarchical pins to their respective flat pin(s). 'report_clocks -clocks' can be used to know the mapped flat pins for given clock. (File /home/ahesham/Projects/System/System_pnr/pnr/../DFT/sdc/sys_top_DFT.sdc, Line 51).
+
+**WARN: (TCLCMD-1068):	One or more of the target pins given with create_clock/create_generated_clock for clock 'Rx_clk' are hierarchical pins. Tool has mapped these hierarchical pins to their respective flat pin(s). 'report_clocks -clocks' can be used to know the mapped flat pins for given clock. (File /home/ahesham/Projects/System/System_pnr/pnr/../DFT/sdc/sys_top_DFT.sdc, Line 54).
+
+#WARNING (NRDB-21) The number of routing layer 7 in the database does not match with the value of 10 in the Extended Cap Table file.
+Loading preference file /home/ahesham/Projects/System/System_pnr/pnr/sys_top_signoff.enc.dat/enc.pref.tcl ...
+#WARNING (NRIF-64) When droutePostRouteSwapVia is NOT set to 'false' or 'none', the tool just does post route via optimization and it will NOT do normal routing.
+#WARNING (NRDB-21) The number of routing layer 7 in the database does not match with the value of 10 in the Extended Cap Table file.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (SOCCTE-286):	Library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c is not in the min library list.
+**WARN: (SOCCTE-289):	set_driving_cell :  Use the cell in library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.
+**WARN: (EMS-27):	Message (SOCCTE-286) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (EMS-27):	Message (SOCCTE-289) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+loading place ...
+loading route ...
+<CMD> setDrawView ameba
+<CMD> setDrawView place
+<CMD> clearClockDomains
+<CMD> setClockDomains -all
+setClockDomains -all 
+**WARN: (SOCSYC-1873):	The setClockDomains -all option is unsupported in CTE mode 
+<CMD> timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix sys_top_postRoute -outDir timingReports
+-engine default                        # enums={feDC signalStorm default}, default=default, user setting
+-signOff false                         # bool, default=false
+Detail RC Extraction called for design sys_top.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: RCcorner
+extractDetailRC Option : -outfile ./sys_top_R4iJB2_6759.rcdb.d  -extended
+RC Mode: Detail [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 302.9M)
+Creating parasitic data file './sys_top_R4iJB2_6759.rcdb.d/header.da' in memory efficient access mode for storing RC.
+Write RCDB with uncompressed RC data. Compressed RCDB mode disabled.
+Extracted 10.0069% (CPU Time= 0:00:00.1  MEM= 309.1M)
+Extracted 20.0085% (CPU Time= 0:00:00.1  MEM= 310.9M)
+Extracted 30.01% (CPU Time= 0:00:00.1  MEM= 311.1M)
+Extracted 40.0063% (CPU Time= 0:00:00.1  MEM= 311.1M)
+Extracted 50.0079% (CPU Time= 0:00:00.1  MEM= 311.1M)
+Extracted 60.0095% (CPU Time= 0:00:00.1  MEM= 311.1M)
+Extracted 70.0058% (CPU Time= 0:00:00.1  MEM= 311.1M)
+Extracted 80.0074% (CPU Time= 0:00:00.1  MEM= 311.1M)
+Extracted 90.009% (CPU Time= 0:00:00.1  MEM= 311.1M)
+Extracted 100% (CPU Time= 0:00:00.1  MEM= 311.3M)
+Nr. Extracted Resistors     : 35216
+Nr. Extracted Ground Cap.   : 37191
+Nr. Extracted Coupling Cap. : 0
+Detail RC Extraction DONE (CPU Time: 0:00:00.1  Real Time: 0:00:00.0  MEM: 302.914M)
+Found active setup analysis view setup1_analysis_view
+Found active setup analysis view setup2_analysis_view
+Found active setup analysis view setup3_analysis_view
+Found active hold analysis view hold1_analysis_view
+Found active hold analysis view hold2_analysis_view
+Found active hold analysis view hold3_analysis_view
+
+------------------------------------------------------------
+          timeDesign Summary                             
+------------------------------------------------------------
+
++--------------------+---------+---------+---------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | in2reg  | reg2out | in2out  | clkgate |
++--------------------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  0.290  |  0.290  |  5.492  | 77.027  |   N/A   |  4.067  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |  0.000  |   N/A   |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |    0    |   N/A   |    0    |
+|          All Paths:|  1010   |   993   |   307   |    6    |   N/A   |    1    |
++--------------------+---------+---------+---------+---------+---------+---------+
+
++----------------+---------------------------+--------------+
+|                |            Real           |     Total    |
+|    DRVs        +--------------+------------+--------------|
+|                |Nr nets(terms)| Worst Vio  |Nr nets(terms)|
++----------------+--------------+------------+--------------+
+|   max_cap      |    0 (0)     |   0.000    |    0 (0)     |
+|   max_tran     |    0 (0)     |   0.000    |    0 (0)     |
+|   max_fanout   |    0 (0)     |     0      |    0 (0)     |
++----------------+--------------+------------+--------------+
+
+Density: 100.000%
+------------------------------------------------------------
+Reported timing to dir timingReports
+Total CPU time: 0.76 sec
+Total Real time: 0.0 sec
+Total Memory Usage: 319.417969 Mbytes
+<CMD> clearClockDomains
+<CMD> setClockDomains -all
+setClockDomains -all 
+**WARN: (SOCSYC-1873):	The setClockDomains -all option is unsupported in CTE mode 
+<CMD> timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix sys_top_postRoute -outDir timingReports
+-engine default                        # enums={feDC signalStorm default}, default=default, user setting
+-signOff false                         # bool, default=false
+Detail RC Extraction called for design sys_top.
+RC Extraction called in multi-corner(1) mode.
+Process corner(s) are loaded.
+ Corner: RCcorner
+extractDetailRC Option : -outfile ./sys_top_R4iJB2_6759.rcdb.d -maxResLength 200  -extended
+RC Mode: Detail [Extended CapTable, RC Table Resistances]
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Coupling Cap. Scaling Factor : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Checking LVS Completed (CPU Time= 0:00:00.0  MEM= 319.4M)
+Closing parasitic data file './sys_top_R4iJB2_6759.rcdb.d'. 1975 times net's RC data read were performed.
+Creating parasitic data file './sys_top_R4iJB2_6759.rcdb.d/header.da' in memory efficient access mode for storing RC.
+Write RCDB with uncompressed RC data. Compressed RCDB mode disabled.
+Extracted 10.0069% (CPU Time= 0:00:00.0  MEM= 323.8M)
+Extracted 20.0085% (CPU Time= 0:00:00.1  MEM= 325.7M)
+Extracted 30.01% (CPU Time= 0:00:00.1  MEM= 325.8M)
+Extracted 40.0063% (CPU Time= 0:00:00.1  MEM= 325.8M)
+Extracted 50.0079% (CPU Time= 0:00:00.1  MEM= 325.8M)
+Extracted 60.0095% (CPU Time= 0:00:00.1  MEM= 325.8M)
+Extracted 70.0058% (CPU Time= 0:00:00.1  MEM= 325.8M)
+Extracted 80.0074% (CPU Time= 0:00:00.1  MEM= 325.8M)
+Extracted 90.009% (CPU Time= 0:00:00.1  MEM= 325.8M)
+Extracted 100% (CPU Time= 0:00:00.1  MEM= 325.9M)
+Nr. Extracted Resistors     : 35216
+Nr. Extracted Ground Cap.   : 37191
+Nr. Extracted Coupling Cap. : 0
+Detail RC Extraction DONE (CPU Time: 0:00:00.1  Real Time: 0:00:00.0  MEM: 319.434M)
+Found active setup analysis view setup1_analysis_view
+Found active setup analysis view setup2_analysis_view
+Found active setup analysis view setup3_analysis_view
+Found active hold analysis view hold1_analysis_view
+Found active hold analysis view hold2_analysis_view
+Found active hold analysis view hold3_analysis_view
+
+------------------------------------------------------------
+          timeDesign Summary                             
+------------------------------------------------------------
+
++--------------------+---------+---------+---------+---------+---------+---------+
+|     Hold mode      |   all   | reg2reg | in2reg  | reg2out | in2out  | clkgate |
++--------------------+---------+---------+---------+---------+---------+---------+
+|           WNS (ns):|  0.033  |  0.038  |  0.040  | 20.992  |   N/A   |  0.033  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |  0.000  |   N/A   |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |    0    |   N/A   |    0    |
+|          All Paths:|  1010   |   993   |   307   |    6    |   N/A   |    1    |
++--------------------+---------+---------+---------+---------+---------+---------+
+
+Density: 100.000%
+------------------------------------------------------------
+Reported timing to dir timingReports
+Total CPU time: 0.63 sec
+Total Real time: 1.0 sec
+Total Memory Usage: 319.566406 Mbytes
+<CMD> verifyGeometry -noMinArea
+ *** Starting Verify Geometry (MEM: 319.6) ***
+
+  VERIFY GEOMETRY ...... Starting Verification
+  VERIFY GEOMETRY ...... Initializing
+  VERIFY GEOMETRY ...... Deleting Existing Violations
+  VERIFY GEOMETRY ...... Creating Sub-Areas
+                  ...... bin size: 8000
+  VERIFY GEOMETRY ...... SubArea : 1 of 1
+  VERIFY GEOMETRY ...... Cells          :  0 Viols.
+  VERIFY GEOMETRY ...... SameNet        :  0 Viols.
+  VERIFY GEOMETRY ...... Wiring         :  0 Viols.
+  VERIFY GEOMETRY ...... Antenna        :  0 Viols.
+  VERIFY GEOMETRY ...... Sub-Area : 1 complete 0 Viols. 0 Wrngs.
+VG: elapsed time: 1.00
+Begin Summary ...
+  Cells       : 0
+  SameNet     : 0
+  Wiring      : 0
+  Antenna     : 0
+  Short       : 0
+  Overlap     : 0
+End Summary
+
+  Verification Complete : 0 Viols.  0 Wrngs.
+
+**********End: VERIFY GEOMETRY**********
+ *** verify geometry (CPU: 0:00:00.9  MEM: 30.7M)
+
+<CMD> verifyConnectivity -type all -error 1000 -warning 50
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Tue Oct  6 21:44:07 2026
+
+Design Name: sys_top
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (240.4700, 160.4700)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+Net REF_CLK: Found a geometry with bounding box (-0.10,50.10) (0.10,50.30) outside design boundary.
+Violations for such geometries will be reported.
+
+Begin Summary 
+  Found no problems or warnings.
+End Summary
+
+End Time: Tue Oct  6 21:44:07 2026
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 0 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.1  MEM: 0.000M)
+
+<CMD> verifyProcessAntenna -reportfile sys_top.antenna.rpt -leffile sys_top.antenna.lef -error 1000
+
+******* START VERIFY ANTENNA ********
+Report File: sys_top.antenna.rpt
+LEF Macro File: sys_top.antenna.lef
+Verification Complete: 0 Violations
+******* DONE VERIFY ANTENNA ********
+(CPU Time: 0:00:00.1  MEM: 0.000M)
+
+<CMD> verifyGeometry
+ *** Starting Verify Geometry (MEM: 331.0) ***
+
+  VERIFY GEOMETRY ...... Starting Verification
+  VERIFY GEOMETRY ...... Initializing
+  VERIFY GEOMETRY ...... Deleting Existing Violations
+  VERIFY GEOMETRY ...... Creating Sub-Areas
+                  ...... bin size: 8000
+  VERIFY GEOMETRY ...... SubArea : 1 of 1
+  VERIFY GEOMETRY ...... Cells          :  0 Viols.
+  VERIFY GEOMETRY ...... SameNet        :  0 Viols.
+  VERIFY GEOMETRY ...... Wiring         :  1 Viols.
+  VERIFY GEOMETRY ...... Antenna        :  0 Viols.
+  VERIFY GEOMETRY ...... Sub-Area : 1 complete 1 Viols. 0 Wrngs.
+VG: elapsed time: 1.00
+Begin Summary ...
+  Cells       : 0
+  SameNet     : 0
+  Wiring      : 1
+  Antenna     : 0
+  Short       : 0
+  Overlap     : 0
+End Summary
+
+  Verification Complete : 1 Viols.  0 Wrngs.
+
+**********End: VERIFY GEOMETRY**********
+ *** verify geometry (CPU: 0:00:00.7  MEM: 28.8M)
+
+<CMD> zoomBox -8.329 49.035 21.779 31.311
+<CMD> zoomBox -1.211 42.258 1.373 37.943
+<CMD> zoomBox -0.426 40.614 0.671 39.160
+<CMD> zoomBox -0.197 40.392 0.160 39.932
+<CMD> verifyGeometry -noMinArea
+ *** Starting Verify Geometry (MEM: 356.6) ***
+
+  VERIFY GEOMETRY ...... Starting Verification
+  VERIFY GEOMETRY ...... Initializing
+  VERIFY GEOMETRY ...... Deleting Existing Violations
+  VERIFY GEOMETRY ...... Creating Sub-Areas
+                  ...... bin size: 8000
+  VERIFY GEOMETRY ...... SubArea : 1 of 1
+  VERIFY GEOMETRY ...... Cells          :  0 Viols.
+  VERIFY GEOMETRY ...... SameNet        :  0 Viols.
+  VERIFY GEOMETRY ...... Wiring         :  0 Viols.
+  VERIFY GEOMETRY ...... Antenna        :  0 Viols.
+  VERIFY GEOMETRY ...... Sub-Area : 1 complete 0 Viols. 0 Wrngs.
+VG: elapsed time: 0.00
+Begin Summary ...
+  Cells       : 0
+  SameNet     : 0
+  Wiring      : 0
+  Antenna     : 0
+  Short       : 0
+  Overlap     : 0
+End Summary
+
+  Verification Complete : 0 Viols.  0 Wrngs.
+
+**********End: VERIFY GEOMETRY**********
+ *** verify geometry (CPU: 0:00:00.7  MEM: 20.9M)
+
+<CMD> panPage 1 0
+<CMD> panPage -1 0
+<CMD> setLayerPreference hilite -color {white red green blue yellow magenta cyan orange purple blue green yellow red magenta #d0d0d0 #d8d8d8 #e0e0e0 #e8e8e8 #f0f0f0 #f8f8f8 red green blue yellow magenta cyan purple pink orange brown skyblue white}
+<CMD_INTERNAL> pageSelect ecoopt nbframe resize
+<CMD> setLayerPreference congestH -isVisible 0
+<CMD> setLayerPreference congestV -isVisible 0
+<CMD> setLayerPreference congestObj -isVisible 0
+<CMD> zoomBox 53.343 79.142 177.900 11.158
+<CMD> zoomBox 99.584 60.252 133.435 29.113
+<CMD> zoomBox 112.676 52.028 130.280 40.163
+<CMD> zoomBox 117.014 50.396 126.447 43.052
+<CMD> zoomBox 120.503 49.568 123.362 46.870
+<CMD> getOpCond -max
+<CMD> getOpCond -max
+<CMD> runN2NOpt -bypassPrecheck
+Prepare to launch N2N in auto mode.
+      mode = auto
+      effort = high
+      opCond = scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+      preloadInclude = 
+      postloadInclude = 
+      rcVar = 
+      rcAttr = 
+      myScriptFile = 
+      saveToDesignName = sys_top_n2n.enc
+      removeTempFiles = 0
+      inDir = ./n2n_input
+      outDir = ./n2n_output
+      report = all
+
+Redoing specifyClockTree  -clkfile /home/ahesham/Projects/System/System_pnr/pnr/sys_top_signoff.enc.dat/sys_top.ctstch  ...
+Writing Netlist "sys_top_n2n.enc.dat/sys_top.v" ...
+Saving clock tree spec file 'sys_top_n2n.enc.dat/sys_top.ctstch' ...
+Saving configuration ...
+Saving preference file sys_top_n2n.enc.dat/enc.pref.tcl ...
+Saving SI fix option to 'sys_top_n2n.enc.dat/siFix.option'...
+Saving floorplan ...
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+*** Completed saveYieldMap (cpu=: 0:00:00.0 real=0:00:00.0 mem=: 0.000M) ***
+Creating constraint file...
+Calling write_sdc ... 
+Analyzing the design ...
+*info: no scan chain specified!
+Launching rc -f ./n2n_input/ec.tcl -logfile /dev/null  ...
+
+Fatal internal error, code 11 (SIGSEGV - segmentation violation)
+
+Operating System: linux
+Product Version: v08.10-s108_1
+Build Date: Jul 29 2008
+Exe-path: /usr/Cadence/SOC/tools.lnx86/synth/bin/32bit/rc
+Stack trace:
+Location identifier:
+  0000000009210e350000000009211bc90000000009211c4d00000000091fd69e00000000091bdb60
+  00000000f774a400
+Abnormal exit.
+<CMD> runN2NOpt -bypassPrecheck
+Prepare to launch N2N in auto mode.
+      mode = auto
+      effort = high
+      opCond = scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+      preloadInclude = 
+      postloadInclude = 
+      rcVar = 
+      rcAttr = 
+      myScriptFile = 
+      saveToDesignName = sys_top_n2n.enc
+      removeTempFiles = 0
+      inDir = ./n2n_input
+      outDir = ./n2n_output
+      report = all
+
+Redoing specifyClockTree  -clkfile /home/ahesham/Projects/System/System_pnr/pnr/sys_top_signoff.enc.dat/sys_top.ctstch  ...
+**WARN: (SOCSYT-3036):	Design directory sys_top_n2n.enc.dat exists, rename it to sys_top_n2n.enc.dat.tmp.
+If saveDesign succeeds, it will be deleted.
+Writing Netlist "sys_top_n2n.enc.dat/sys_top.v" ...
+Saving clock tree spec file 'sys_top_n2n.enc.dat/sys_top.ctstch' ...
+Saving configuration ...
+Saving preference file sys_top_n2n.enc.dat/enc.pref.tcl ...
+Saving SI fix option to 'sys_top_n2n.enc.dat/siFix.option'...
+Saving floorplan ...
+Saving Drc markers ...
+... No Drc file written since there is no markers found.
+*** Completed saveYieldMap (cpu=: 0:00:00.0 real=0:00:00.0 mem=: 0.000M) ***
+Creating constraint file...
+Calling write_sdc ... 
+Analyzing the design ...
+*info: no scan chain specified!
+Launching rc -f ./n2n_input/ec.tcl -logfile /dev/null  ...
+
+Fatal internal error, code 11 (SIGSEGV - segmentation violation)
+
+Operating System: linux
+Product Version: v08.10-s108_1
+Build Date: Jul 29 2008
+Exe-path: /usr/Cadence/SOC/tools.lnx86/synth/bin/32bit/rc
+Stack trace:
+Location identifier:
+  0000000009210e350000000009211bc90000000009211c4d00000000091fd69e00000000091bdb60
+  00000000f7799400
+Abnormal exit.
+<CMD> selectVia 105.7700 141.9650 106.5400 142.1650 4 n1048
+
+*** Memory Usage v0.144 (Current mem = 353.207M, initial mem = 62.238M) ***
+--- Ending "First Encounter" (totcpu=0:00:43.2, real=0:05:40, mem=353.2M) ---

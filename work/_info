@@ -1,0 +1,897 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/zeyad/Digital_Diploma_Temsah/UART_System
+vALU
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1791397617
+!i10b 1
+!s100 ^3X`>>C=fd8GnlX2z02Fc0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I5=09YcPm_jCZS>TO?DoUe1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1789749282
+8./rtl/ALU/ALU.v
+F./rtl/ALU/ALU.v
+!i122 446
+L0 1 97
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1791397617.000000
+!s107 ./Testbench/tb.sv|./rtl/System_Top/SYS_TOP_dft.v|./rtl/SYS_Control_RegisterFile/SYS_CTRL.sv|./rtl/SYS_Control_RegisterFile/Register.v|./rtl/ALU/ALU.v|./rtl/ClkDiv_ClkGate/Clk_divider.sv|./rtl/ClkDiv_ClkGate/CLK_GATE.v|./rtl/DataSynch_RstSynch_PulseGen/DATA_SYNCH.v|./rtl/DataSynch_RstSynch_PulseGen/RST_SYNCH.v|./rtl/DataSynch_RstSynch_PulseGen/PULSE_GEN.v|./rtl/FIFO/Async_FIFO.v|./rtl/FIFO/DF_SYNC.v|./rtl/FIFO/FIFO_MEM_CNTRL.v|./rtl/FIFO/FIFO_RD.v|./rtl/FIFO/FIFO_WR.v|./rtl/UART/UART.v|./rtl/UART/UART_RX.sv|./rtl/UART/RX_FSM.sv|./rtl/UART/DATA_SYNC.v|./rtl/UART/Data_Sampling.v|./rtl/UART/Stp_Chk.v|./rtl/UART/Parity_Chk.v|./rtl/UART/Strt_Chk.v|./rtl/UART/DeSerializer.v|./rtl/UART/Edge_Bit_Counter.v|./rtl/UART/TX_TOP.sv|./rtl/UART/TX_FSM.sv|./rtl/UART/Parity_Calc.v|./rtl/UART/Serializer.v|./rtl/UART/MUX.sv|./rtl/UART/Package.sv|
+Z7 !s90 -reportprogress|300|-sv|./rtl/UART/Package.sv|./rtl/UART/MUX.sv|./rtl/UART/Serializer.v|./rtl/UART/Parity_Calc.v|./rtl/UART/TX_FSM.sv|./rtl/UART/TX_TOP.sv|./rtl/UART/Edge_Bit_Counter.v|./rtl/UART/DeSerializer.v|./rtl/UART/Strt_Chk.v|./rtl/UART/Parity_Chk.v|./rtl/UART/Stp_Chk.v|./rtl/UART/Data_Sampling.v|./rtl/UART/DATA_SYNC.v|./rtl/UART/RX_FSM.sv|./rtl/UART/UART_RX.sv|./rtl/UART/UART.v|./rtl/FIFO/FIFO_WR.v|./rtl/FIFO/FIFO_RD.v|./rtl/FIFO/FIFO_MEM_CNTRL.v|./rtl/FIFO/DF_SYNC.v|./rtl/FIFO/Async_FIFO.v|./rtl/DataSynch_RstSynch_PulseGen/PULSE_GEN.v|./rtl/DataSynch_RstSynch_PulseGen/RST_SYNCH.v|./rtl/DataSynch_RstSynch_PulseGen/DATA_SYNCH.v|./rtl/ClkDiv_ClkGate/CLK_GATE.v|./rtl/ClkDiv_ClkGate/Clk_divider.sv|./rtl/ALU/ALU.v|./rtl/SYS_Control_RegisterFile/Register.v|./rtl/SYS_Control_RegisterFile/SYS_CTRL.sv|./rtl/System_Top/SYS_TOP_dft.v|./Testbench/tb.sv|
+!i113 1
+o-sv
+Z8 tCvgOpt 0
+n@a@l@u
+vclk_div
+R1
+R2
+!i10b 1
+!s100 Q3BCICoVz:8Bi`YBEoCkI2
+R3
+IHPNe2kEBGcGIG`L]?4`FT2
+R4
+S1
+R0
+w1790005786
+8./rtl/ClkDiv_ClkGate/Clk_divider.sv
+F./rtl/ClkDiv_ClkGate/Clk_divider.sv
+!i122 446
+Z9 L0 1 52
+R5
+r1
+!s85 0
+31
+R6
+Z10 !s107 ./Testbench/tb.sv|./rtl/System_Top/SYS_TOP_dft.v|./rtl/SYS_Control_RegisterFile/SYS_CTRL.sv|./rtl/SYS_Control_RegisterFile/Register.v|./rtl/ALU/ALU.v|./rtl/ClkDiv_ClkGate/Clk_divider.sv|./rtl/ClkDiv_ClkGate/CLK_GATE.v|./rtl/DataSynch_RstSynch_PulseGen/DATA_SYNCH.v|./rtl/DataSynch_RstSynch_PulseGen/RST_SYNCH.v|./rtl/DataSynch_RstSynch_PulseGen/PULSE_GEN.v|./rtl/FIFO/Async_FIFO.v|./rtl/FIFO/DF_SYNC.v|./rtl/FIFO/FIFO_MEM_CNTRL.v|./rtl/FIFO/FIFO_RD.v|./rtl/FIFO/FIFO_WR.v|./rtl/UART/UART.v|./rtl/UART/UART_RX.sv|./rtl/UART/RX_FSM.sv|./rtl/UART/DATA_SYNC.v|./rtl/UART/Data_Sampling.v|./rtl/UART/Stp_Chk.v|./rtl/UART/Parity_Chk.v|./rtl/UART/Strt_Chk.v|./rtl/UART/DeSerializer.v|./rtl/UART/Edge_Bit_Counter.v|./rtl/UART/TX_TOP.sv|./rtl/UART/TX_FSM.sv|./rtl/UART/Parity_Calc.v|./rtl/UART/Serializer.v|./rtl/UART/MUX.sv|./rtl/UART/Package.sv|
+R7
+!i113 1
+o-sv
+R8
+vCLK_GATE
+R1
+R2
+!i10b 1
+!s100 J<XTK96N7ZDR`K]BZhFRj0
+R3
+I;SL9Aao?WF9X42no>Cf8X1
+R4
+S1
+R0
+w1790181720
+8./rtl/ClkDiv_ClkGate/CLK_GATE.v
+F./rtl/ClkDiv_ClkGate/CLK_GATE.v
+!i122 446
+L0 6 35
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@c@l@k_@g@a@t@e
+vData_sampling
+R1
+R2
+!i10b 1
+!s100 @V[X=8YAScP3>Ddjihl3O2
+R3
+I4_Ve2Z2P]ZcUJDP2RPhMV2
+R4
+S1
+R0
+w1786716602
+8./rtl/UART/Data_Sampling.v
+F./rtl/UART/Data_Sampling.v
+!i122 446
+L0 1 69
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@data_sampling
+vData_Sync
+R1
+R2
+!i10b 1
+!s100 >8]@DdY1i`:XRh<CoU`Bz3
+R3
+IK[Q3=?O6^dUYaVoXOk3mV3
+R4
+S1
+R0
+w1787160936
+8./rtl/UART/DATA_SYNC.v
+F./rtl/UART/DATA_SYNC.v
+!i122 446
+Z11 L0 1 39
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@data_@sync
+vData_Synch
+R1
+R2
+!i10b 1
+!s100 9Elbi`kD193K7WXl9G9oD0
+R3
+Ig^KelLC]YG9lleA64_gcz1
+R4
+S1
+R0
+w1789840514
+8./rtl/DataSynch_RstSynch_PulseGen/DATA_SYNCH.v
+F./rtl/DataSynch_RstSynch_PulseGen/DATA_SYNCH.v
+!i122 446
+R11
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@data_@synch
+vDeSerializer
+R1
+R2
+!i10b 1
+!s100 QCRX28HE7d_AmOYNGZPg33
+R3
+IMeCbSHjjCcU5A^j:ldbaT0
+R4
+S1
+R0
+w1786718988
+8./rtl/UART/DeSerializer.v
+F./rtl/UART/DeSerializer.v
+!i122 446
+L0 1 30
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@de@serializer
+vDF_SYNC
+R1
+R2
+!i10b 1
+!s100 JhL1ETYZ2Cz3ioe=0B]I23
+R3
+I7eY92[XW>5]T5Hn::NI0O0
+R4
+S1
+R0
+w1787554250
+8./rtl/FIFO/DF_SYNC.v
+F./rtl/FIFO/DF_SYNC.v
+!i122 446
+L0 1 26
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@d@f_@s@y@n@c
+vEdge_Bit_Counter
+R1
+R2
+!i10b 1
+!s100 0en_V6OzeMF0KGnD<GQiR1
+R3
+I><O=LIg:MB8doAM:LhaJ@0
+R4
+S1
+R0
+w1786802554
+8./rtl/UART/Edge_Bit_Counter.v
+F./rtl/UART/Edge_Bit_Counter.v
+!i122 446
+L0 1 101
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@edge_@bit_@counter
+vFIFO_MEM_CNTRL
+R1
+R2
+!i10b 1
+!s100 47zLN_2KhOM[aV:MM@laa1
+R3
+IR:CCOPA]zYMV`fFFQPFdc2
+R4
+S1
+R0
+w1787680990
+8./rtl/FIFO/FIFO_MEM_CNTRL.v
+F./rtl/FIFO/FIFO_MEM_CNTRL.v
+!i122 446
+L0 1 25
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@f@i@f@o_@m@e@m_@c@n@t@r@l
+vFIFO_RD
+R1
+R2
+!i10b 1
+!s100 BZQkDIS654DE^5;0fnHV83
+R3
+ITRJXlXkGGjalWL[LL<bBN2
+R4
+S1
+R0
+w1787596840
+8./rtl/FIFO/FIFO_RD.v
+F./rtl/FIFO/FIFO_RD.v
+!i122 446
+R9
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@f@i@f@o_@r@d
+vFIFO_TOP
+R1
+R2
+!i10b 1
+!s100 fP:R1YW:fze5nzVQaBfMn0
+R3
+IE;9UMmEH>V5OHMiBP8]7G3
+R4
+S1
+R0
+w1787676952
+8./rtl/FIFO/Async_FIFO.v
+F./rtl/FIFO/Async_FIFO.v
+!i122 446
+L0 1 67
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@f@i@f@o_@t@o@p
+vFIFO_WR
+R1
+R2
+!i10b 1
+!s100 MJLZXo>]2Azaen]EG:2ca2
+R3
+I[BJmIMVNBY?RBi97ehN?N3
+R4
+S1
+R0
+w1787600578
+8./rtl/FIFO/FIFO_WR.v
+F./rtl/FIFO/FIFO_WR.v
+!i122 446
+L0 1 50
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@f@i@f@o_@w@r
+vMUX
+R1
+Z12 DXx4 work 8 uart_pkg 0 22 EZ@?5V:i938lV67cbFB<f2
+DXx4 work 11 MUX_sv_unit 0 22 SB;XaYHaA0XJgE?3[BJ9`3
+R2
+R4
+r1
+!s85 0
+!i10b 1
+!s100 4dU>nBVRlc9X92fVQ>]0k2
+I^XaN6N95S^nVb5BL5SKj[3
+!s105 MUX_sv_unit
+S1
+R0
+Z13 w1785854346
+Z14 8./rtl/UART/MUX.sv
+Z15 F./rtl/UART/MUX.sv
+!i122 446
+L0 3 31
+R5
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@m@u@x
+XMUX_sv_unit
+R1
+R12
+R2
+VSB;XaYHaA0XJgE?3[BJ9`3
+r1
+!s85 0
+!i10b 1
+!s100 1@JQ;cQMDjbz@Q>:0hdKn0
+ISB;XaYHaA0XJgE?3[BJ9`3
+!i103 1
+S1
+R0
+R13
+R14
+R15
+!i122 446
+Z16 L0 1 0
+R5
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@m@u@x_sv_unit
+vparity
+R1
+R2
+!i10b 1
+!s100 B5kB4Yc78f;Ji4DHGHN761
+R3
+IadcN];9nQTk<DzR<6:CD32
+R4
+S1
+R0
+w1785847952
+8./rtl/UART/Parity_Calc.v
+F./rtl/UART/Parity_Calc.v
+!i122 446
+L0 1 22
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+vParity_chk
+R1
+R2
+!i10b 1
+!s100 VEk3zlnA@P9Ne>>Z3MDaX3
+R3
+IQ1APKMYAZ34T<Z:=BWzFS3
+R4
+S1
+R0
+w1786821952
+8./rtl/UART/Parity_Chk.v
+F./rtl/UART/Parity_Chk.v
+!i122 446
+L0 1 63
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@parity_chk
+vPULSE_GEN
+R1
+R2
+!i10b 1
+!s100 RGcDTQnWgHo=Vc@`gW5Hl3
+R3
+I:K:91678FJ=cz=LVf0F0W2
+R4
+S1
+R0
+w1789751014
+8./rtl/DataSynch_RstSynch_PulseGen/PULSE_GEN.v
+F./rtl/DataSynch_RstSynch_PulseGen/PULSE_GEN.v
+!i122 446
+L0 6 33
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@p@u@l@s@e_@g@e@n
+vRegister
+R1
+R2
+!i10b 1
+!s100 ```UBmUKIIJWmXizg1zC_0
+R3
+ILooCd57`QNanf0f?0B]fO0
+R4
+S1
+R0
+w1789924144
+8./rtl/SYS_Control_RegisterFile/Register.v
+F./rtl/SYS_Control_RegisterFile/Register.v
+!i122 446
+L0 1 53
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@register
+vRST_SYNCH
+R1
+R2
+!i10b 1
+!s100 Xj6]YUh=m`5>8^?H]H@cm2
+R3
+I:G6U75W;:?T9XRh:]Vo`[0
+R4
+S1
+R0
+w1787765906
+8./rtl/DataSynch_RstSynch_PulseGen/RST_SYNCH.v
+F./rtl/DataSynch_RstSynch_PulseGen/RST_SYNCH.v
+!i122 446
+L0 1 40
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@r@s@t_@s@y@n@c@h
+vRX_FSM
+R1
+R2
+!i10b 1
+!s100 jD^FlC>[RfAh?ZR>YLCf21
+R3
+I7`PohMb04l89I0C1WzOHo2
+R4
+S1
+R0
+w1790078892
+8./rtl/UART/RX_FSM.sv
+F./rtl/UART/RX_FSM.sv
+!i122 446
+L0 1 185
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@r@x_@f@s@m
+vRX_TOP
+R1
+R2
+!i10b 1
+!s100 R4nb:I3o^YO[e^giNZ93I2
+R3
+Ie`c@[HN3M581P`ENT><5f1
+R4
+S1
+R0
+w1789181356
+8./rtl/UART/UART_RX.sv
+F./rtl/UART/UART_RX.sv
+!i122 446
+L0 1 115
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@r@x_@t@o@p
+vserializer
+R1
+R2
+!i10b 1
+!s100 TkM?Yk5bIFTnW6_2`:<Hh1
+R3
+I9Bf68Uibj03?J9eda<J`d0
+R4
+S1
+R0
+w1789181892
+8./rtl/UART/Serializer.v
+F./rtl/UART/Serializer.v
+!i122 446
+L0 1 57
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+vstp_chk
+R1
+R2
+!i10b 1
+!s100 BF4;Inl;[CC56]>?;U9?M3
+R3
+ID8El];G?D1>M:6JQz3]YV0
+R4
+S1
+R0
+w1786818646
+8./rtl/UART/Stp_Chk.v
+F./rtl/UART/Stp_Chk.v
+!i122 446
+L0 1 34
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+vStrt_chk
+R1
+R2
+!i10b 1
+!s100 [lk[Y1mAOjKDHcDKhclhM3
+R3
+I_QNWJXnmT5oCNEDYH_Yi:0
+R4
+S1
+R0
+w1786720892
+8./rtl/UART/Strt_Chk.v
+F./rtl/UART/Strt_Chk.v
+!i122 446
+L0 1 27
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@strt_chk
+vSYS_CTRL
+R1
+R2
+!i10b 1
+!s100 X25O=6kEzdVFJSNV>n2of3
+R3
+I;fBVe@QLLUb`h2lcNf69U3
+R4
+S1
+R0
+w1789995628
+8./rtl/SYS_Control_RegisterFile/SYS_CTRL.sv
+F./rtl/SYS_Control_RegisterFile/SYS_CTRL.sv
+!i122 446
+L0 1 224
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@s@y@s_@c@t@r@l
+vsys_top
+R1
+R2
+!i10b 1
+!s100 DN_0zo4ADknC:@1D0GaG53
+R3
+IRZ5fj=]MTibLkW4O;U7ZW0
+R4
+S1
+R0
+w1791149526
+8./rtl/System_Top/SYS_TOP_dft.v
+F./rtl/System_Top/SYS_TOP_dft.v
+!i122 446
+L0 1 257
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+vtb
+R1
+R2
+!i10b 1
+!s100 fU>];]k9n?Z42E85?Q6Wg3
+R3
+IhceS9:S2`hXafhSiZ:HjS3
+R4
+S1
+R0
+w1791397604
+8./Testbench/tb.sv
+F./Testbench/tb.sv
+!i122 446
+L0 2 182
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+vTX_FSM
+R1
+R12
+DXx4 work 14 TX_FSM_sv_unit 0 22 MK>o>ZJFOdeG;mGNm45Wi2
+R2
+R4
+r1
+!s85 0
+!i10b 1
+!s100 <6a]IC5lT0I3el2l:JkIE3
+I;gYgN:IolGKfCA<[KB28E3
+!s105 TX_FSM_sv_unit
+S1
+R0
+Z17 w1789181370
+Z18 8./rtl/UART/TX_FSM.sv
+Z19 F./rtl/UART/TX_FSM.sv
+!i122 446
+L0 4 114
+R5
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@t@x_@f@s@m
+XTX_FSM_sv_unit
+R1
+R12
+R2
+VMK>o>ZJFOdeG;mGNm45Wi2
+r1
+!s85 0
+!i10b 1
+!s100 ]Rb[Pi36ojiL7l4^Loz;U0
+IMK>o>ZJFOdeG;mGNm45Wi2
+!i103 1
+S1
+R0
+R17
+R18
+R19
+!i122 446
+R16
+R5
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@t@x_@f@s@m_sv_unit
+vTX_TOP
+R1
+R12
+DXx4 work 14 TX_TOP_sv_unit 0 22 =c2U`k`l0H86M90IR<>FX3
+R2
+R4
+r1
+!s85 0
+!i10b 1
+!s100 YGLlf;;GODT`DZzX4JDP]3
+I6JFMG9Dk55GVQI<J^HN3E3
+!s105 TX_TOP_sv_unit
+S1
+R0
+Z20 w1789997170
+Z21 8./rtl/UART/TX_TOP.sv
+Z22 F./rtl/UART/TX_TOP.sv
+!i122 446
+L0 4 60
+R5
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@t@x_@t@o@p
+XTX_TOP_sv_unit
+R1
+R12
+R2
+V=c2U`k`l0H86M90IR<>FX3
+r1
+!s85 0
+!i10b 1
+!s100 MVZiBSmO92e06?cDgMlzU3
+I=c2U`k`l0H86M90IR<>FX3
+!i103 1
+S1
+R0
+R20
+R21
+R22
+!i122 446
+R16
+R5
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@t@x_@t@o@p_sv_unit
+vUART
+R1
+R2
+!i10b 1
+!s100 I;T;^^W08I[<Pl:z@L<:M3
+R3
+IIzCUmcTf7gZfzWG_N19=M0
+R4
+S1
+R0
+w1789840392
+8./rtl/UART/UART.v
+F./rtl/UART/UART.v
+!i122 446
+L0 2 56
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8
+n@u@a@r@t
+Xuart_pkg
+R1
+R2
+!i10b 1
+!s100 WFWnbVd`cTM9hNgCIdh]c1
+R3
+IEZ@?5V:i938lV67cbFB<f2
+VEZ@?5V:i938lV67cbFB<f2
+S1
+R0
+w1785854044
+8./rtl/UART/Package.sv
+F./rtl/UART/Package.sv
+!i122 446
+R16
+R5
+r1
+!s85 0
+31
+R6
+R10
+R7
+!i113 1
+o-sv
+R8

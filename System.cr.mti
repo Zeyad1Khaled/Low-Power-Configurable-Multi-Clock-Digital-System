@@ -1,0 +1,22 @@
+/home/zeyad/Digital_Diploma_Temsah/UART_System/ALU_REGFILE_CLKGATE/CLK_GATE.v {1 {vlog -work work -stats=none /home/zeyad/Digital_Diploma_Temsah/UART_System/ALU_REGFILE_CLKGATE/CLK_GATE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CLK_GATE
+
+Top level modules:
+	CLK_GATE
+
+} {} {}} /home/zeyad/Digital_Diploma_Temsah/UART_System/SYS_Control/SYS_CNTRL.sv {1 {vlog -work work -sv -stats=none /home/zeyad/Digital_Diploma_Temsah/UART_System/SYS_Control/SYS_CNTRL.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SYS_CTRL
+
+Top level modules:
+	SYS_CTRL
+
+} {} {}} /home/zeyad/Digital_Diploma_Temsah/UART_System/ALU_REGFILE_CLKGATE/ALU.v {1 {vlog -work work -stats=none /home/zeyad/Digital_Diploma_Temsah/UART_System/ALU_REGFILE_CLKGATE/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}}

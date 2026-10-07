@@ -1,0 +1,70 @@
+#x STXT_BEGIN ST.1
+#x STXT_END ST.1
+#x STXT_BEGIN ST.2
+#x STXT_BEGIN ST.3
+#x STXT_END ST.3
+#x STXT_BEGIN ST.4
+#x STXT_BEGIN ST.5
+UTILITY FaultBrowser
+VERSION 3.8.2
+ATTRIBUTES 0
+TABINFO 1,Stuck-At Coverage Report,enabled
+
+TAB 0
+TYPE FaultTree
+COLOR_SET 0xff0000,50,0xff6666,75,0x99cc00,90,0x006600,100
+STRLEN_SEPARATOR @@
+cross_probe_format gui_load_schematic [dft_get_pin_list -hierarchy %h -analysisName Info_coverage] -is
+add_context_menu -label "Probe Full Hierarchy" -command {gui_load_schematic [dft_get_pin_list -hierarchy %h -view full_hierarchy -analysisName Info_coverage] -is}
+add_context_menu -label "Probe This Instance" -command {gui_load_schematic [dft_get_pin_list -hierarchy %h -view this_instance -analysisName Info_coverage] -is}
+COLUMNS Instance Hierarchy,TREE,Module Name,TEXT,Fault Coverage (%),NUM,Test Coverage (%),NUM,Fault Coverage Loss (%),NUM,Test Coverage Loss (%),NUM,Total Fault Number,NUM,FC,NUM,!DT,NUM,DT,NUM,SR,NUM,UU,NUM,TI,NUM, BL,NUM, LR,NUM,UT,NUM,Color Range,COLOR,Scale,SCALEVALUE
+COLUMN_UNIT 2, 
+SEARCHABLE_COLUMNS 0,1
+
+DATA
+7@@sys_top7@@sys_top4@@0.004@@0.006@@100.006@@100.005@@113125@@106145@@105931@@03@@6982@@141@@01@@01@@01@@74@@0.003@@100
+18@@sys_top.UART_TX_RX4@@UART4@@0.004@@0.005@@22.995@@23.024@@25764@@24404@@24401@@03@@1361@@01@@01@@01@@01@@04@@0.003@@100
+29@@sys_top.UART_TX_RX.U0_UART_RX6@@RX_TOP4@@0.004@@0.005@@16.365@@16.384@@18484@@17364@@17361@@03@@1121@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_RX.U116@@Edge_Bit_Counter4@@0.004@@0.004@@4.994@@5.003@@5803@@5303@@5301@@02@@501@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_RX.U76@@RX_FSM4@@0.004@@0.004@@4.604@@4.603@@5083@@4883@@4881@@02@@201@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_RX.U213@@Data_sampling4@@0.004@@0.004@@3.344@@3.343@@3923@@3543@@3541@@02@@381@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_RX.U410@@Parity_chk4@@0.004@@0.004@@2.114@@2.113@@2283@@2243@@2241@@01@@41@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_RX.U312@@DeSerializer4@@0.004@@0.004@@0.794@@0.792@@842@@842@@841@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_RX.U67@@stp_chk4@@0.004@@0.004@@0.284@@0.282@@302@@302@@301@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_RX.U58@@Strt_chk4@@0.004@@0.004@@0.174@@0.172@@182@@182@@181@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+29@@sys_top.UART_TX_RX.U0_UART_TX6@@TX_TOP4@@0.004@@0.004@@6.634@@6.643@@7283@@7043@@7041@@02@@241@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_TX.U110@@serializer4@@0.004@@0.004@@2.834@@2.833@@3103@@3003@@3001@@02@@101@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_TX.U26@@TX_FSM4@@0.004@@0.004@@2.224@@2.233@@2463@@2363@@2361@@02@@101@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_TX.U43@@MUX4@@0.004@@0.004@@1.174@@1.173@@1283@@1243@@1241@@01@@41@@01@@01@@01@@01@@04@@0.003@@100
+32@@sys_top.UART_TX_RX.U0_UART_TX.U36@@parity4@@0.004@@0.004@@0.414@@0.422@@442@@442@@441@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+17@@sys_top.Regfile_u8@@Register4@@0.004@@0.005@@20.095@@20.114@@21744@@21324@@21321@@02@@421@@01@@01@@01@@01@@04@@0.003@@100
+18@@sys_top.sys_ctrl_u8@@SYS_CTRL4@@0.004@@0.005@@16.925@@16.944@@18844@@17964@@17931@@02@@881@@01@@01@@01@@01@@34@@0.003@@100
+13@@sys_top.ALU_u3@@ALU4@@0.004@@0.005@@14.255@@14.264@@18024@@15124@@15121@@03@@2901@@01@@01@@01@@01@@04@@0.003@@100
+14@@sys_top.FIFO_u8@@FIFO_TOP4@@0.004@@0.005@@13.235@@13.254@@14364@@14044@@14041@@02@@321@@01@@01@@01@@01@@04@@0.003@@100
+17@@sys_top.FIFO_u.U114@@FIFO_MEM_CNTRL4@@0.004@@0.004@@7.904@@7.913@@8543@@8383@@8381@@02@@161@@01@@01@@01@@01@@04@@0.003@@100
+17@@sys_top.FIFO_u.U47@@FIFO_WR4@@0.004@@0.004@@1.834@@1.833@@2023@@1943@@1941@@01@@81@@01@@01@@01@@01@@04@@0.003@@100
+17@@sys_top.FIFO_u.U57@@FIFO_RD4@@0.004@@0.004@@1.754@@1.753@@1943@@1863@@1861@@01@@81@@01@@01@@01@@01@@04@@0.003@@100
+28@@sys_top.FIFO_u.U3_RDptr_sync7@@DF_SYNC4@@0.004@@0.004@@0.794@@0.792@@842@@842@@841@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+28@@sys_top.FIFO_u.U2_WRptr_sync7@@DF_SYNC4@@0.004@@0.004@@0.794@@0.792@@842@@842@@841@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+14@@sys_top.TX_CLK7@@clk_div4@@0.004@@0.004@@3.644@@3.643@@4083@@3863@@3861@@02@@221@@01@@01@@01@@01@@04@@0.003@@100
+14@@sys_top.RX_CLK7@@clk_div4@@0.004@@0.004@@3.134@@3.133@@4083@@3323@@3321@@02@@761@@01@@01@@01@@01@@04@@0.003@@100
+18@@sys_top.Rx2SysCtrl10@@Data_Synch4@@0.004@@0.004@@1.794@@1.793@@1903@@1903@@1901@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+19@@sys_top.rx_rst_sync9@@RST_SYNCH4@@0.004@@0.004@@0.304@@0.302@@322@@322@@311@@01@@01@@01@@01@@01@@01@@14@@0.003@@100
+19@@sys_top.tx_rst_sync9@@RST_SYNCH4@@0.004@@0.004@@0.304@@0.302@@322@@322@@311@@01@@01@@01@@01@@01@@01@@14@@0.003@@100
+21@@sys_top.uart_rst_sync9@@RST_SYNCH4@@0.004@@0.004@@0.304@@0.302@@322@@322@@311@@01@@01@@01@@01@@01@@01@@14@@0.003@@100
+11@@sys_top.RF19@@RST_SYNCH4@@0.004@@0.004@@0.304@@0.302@@322@@322@@311@@01@@01@@01@@01@@01@@01@@14@@0.003@@100
+15@@sys_top.Pulse_U9@@PULSE_GEN4@@0.004@@0.004@@0.284@@0.282@@302@@302@@301@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+14@@sys_top.ALU_CG8@@CLK_GATE4@@0.004@@0.004@@0.264@@0.262@@282@@282@@281@@01@@01@@01@@01@@01@@01@@04@@0.003@@100
+
+END_DATA
+END_TAB
+#x STXT_END ST.5
+#x STXT_BEGIN ST.6
+#x STXT_END ST.6
+#x STXT_BEGIN ST.7
+#x STXT_BEGIN ST.8
+#x STXT_END ST.8
+#x STXT_BEGIN ST.9
+#x STXT_BEGIN ST.10
+#x STXT_END ST.10
+#x STXT_BEGIN ST.11

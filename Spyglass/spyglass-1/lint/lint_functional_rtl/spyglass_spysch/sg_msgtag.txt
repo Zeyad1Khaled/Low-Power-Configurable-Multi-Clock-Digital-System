@@ -1,0 +1,17 @@
+-1 "Av_multitop01" 3
+"TEMPLATE"
+["lint/lint_functional_rtl"]
+"RULE_ORDER"
+[-1]
+"RULEGROUP"
+["auto-verify/Sanity"]
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"

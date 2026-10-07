@@ -1,0 +1,50 @@
+-1 "CMD_sglib03" 2
+"RULEGROUP"
+["Command-line read"]
+"BUILTIN"
+"1"
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "InferLatch" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[62]
+"RULEGROUP"
+["openmore/Coding_for_Synthesis"]
+-1 "RegInputOutput-ML" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[63]
+"RULEGROUP"
+["morelint"]
+-1 "ReportPortInfo-ML" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[42]
+"RULEGROUP"
+["morelint"]
+-1 "STARC05-1.4.3.4" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[81]
+"RULEGROUP"
+["starc2005/s05_Construct/s05_Construct1","starc2005/Basic_Design_Constraint_05"]
+-1 "W240" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[53]
+"RULEGROUP"
+["lint/Lint_Elab_Rules","lint/Usage"]

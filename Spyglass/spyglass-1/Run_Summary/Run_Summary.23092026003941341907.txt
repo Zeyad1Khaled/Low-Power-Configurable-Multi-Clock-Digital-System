@@ -1,0 +1,15 @@
+Date Created     : 23-09-2026 00:39:41
+SpyGlass Version : SpyGlass_vL-2016.06
+Project Name     : spyglass-1
+Goal Name        : cdc/cdc_verify_struct
+Scenario Name    : default_scenario
+Top              : sys_top
+
+Message Summary
+Severity   Non-Waived  Waived
+FATAL           1         0
+ERROR           0         0
+WARNING         0         0
+INFO            0         0
+
+-dashboard_data sync_crossings 

@@ -1,0 +1,35 @@
+read_file -type sourcelist ../rtl/rtl.f
+read_file -type sourcelist ../rtl/system.lst
+
+
+
+current_goal Design_Read -alltop
+
+
+link_design -force
+
+read_file -type gateslib {../Cell_Library/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db}
+set_option enableSV yes
+
+
+set_option designread_enable_synthesis yes
+compile_design -force
+
+remove_file -type gateslib
+read_file -type gateslib {../Cell_Library/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db}
+remove_file -type gateslib
+read_file -type gateslib ../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+remove_file -type gateslib
+
+
+
+current_goal Design_Read -alltop
+
+
+compile_design -force
+
+gui_select_message -rule STX_VE_481 -msg {Syntax error near ( uart_pkg )}
+gui_select_message -rule STX_VE_481 -msg {Syntax error near ( mux_sel )}
+gui_select_message -rule STX_VE_481 -msg {Syntax error near ( ; )}
+gui_exit
+gui_exit

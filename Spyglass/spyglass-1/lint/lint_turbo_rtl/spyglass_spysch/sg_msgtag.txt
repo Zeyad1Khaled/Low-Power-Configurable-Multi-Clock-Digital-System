@@ -1,0 +1,54 @@
+12 "W287b" 1
+"W287b_VIOLATION_CSV_TAG"
+1
+13 "W287b" 1
+"W287b_VIOLATION_CSV_TAG"
+2
+14 "W287b" 3
+"SG_PARENT_CHILD_MSGTAG"
+[12,13]
+"Open_Sp_Sheet"
+["./spyglass-1/lint/lint_turbo_rtl/spyglass_reports/lint/W287b/000/W287b001.csv@@cross-probecol:2"]
+"Sp_Sheet_File_Name"
+["./spyglass-1/lint/lint_turbo_rtl/spyglass_reports/lint/W287b/000/W287b001.csv"]
+-1 "Av_multitop01" 3
+"TEMPLATE"
+["lint/lint_turbo_rtl"]
+"RULE_ORDER"
+[-1]
+"RULEGROUP"
+["auto-verify/Sanity"]
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ReportIgnoredOverlappingRules" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ReportPortInfo-ML" 3
+"TEMPLATE"
+["lint/lint_turbo_rtl"]
+"RULE_ORDER"
+[42]
+"RULEGROUP"
+["morelint"]
+-1 "TurboModeStatus" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "W287b" 3
+"TEMPLATE"
+["lint/lint_turbo_rtl"]
+"RULE_ORDER"
+[91]
+"RULEGROUP"
+["lint/Instance"]

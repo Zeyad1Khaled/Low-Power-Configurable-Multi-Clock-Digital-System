@@ -1,0 +1,81 @@
+9 "Setup_port01" 1
+"SETUP_PORT_SS_SCH"
+1
+10 "Setup_port01" 1
+"SETUP_PORT_SDC_TAG"
+2
+11 "Setup_port01" 1
+"SETUP_PORT_SS_SCH"
+3
+12 "Setup_port01" 1
+"SETUP_PORT_SDC_TAG"
+4
+13 "Setup_port01" 1
+"SETUP_PORT_SS_SCH"
+5
+14 "Setup_port01" 1
+"SETUP_PORT_SDC_TAG"
+6
+15 "Setup_port01" 1
+"SETUP_PORT_SS_SCH"
+7
+16 "Setup_port01" 1
+"SETUP_PORT_SDC_TAG"
+8
+18 "Setup_port01" 1
+"Open_Sp_Sheet"
+["./spyglass-1/sys_top/cdc/cdc_abstract/spyglass_reports/clock-reset/Setup_port01/sys_top.csv"]
+-1 "Ac_abstract01" 3
+"TEMPLATE"
+["cdc/cdc_abstract"]
+"RULE_ORDER"
+[3]
+"RULEGROUP"
+["clock-reset/BLOCK_ABSTRACT"]
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "Info_Case_Analysis" 5
+"TEMPLATE"
+["cdc/cdc_abstract"]
+"RULE_ORDER"
+[4]
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+"SPG_RULETAG_SCH_INFO_RULE"
+"Show Info Case Analysis Data"
+-1 "Propagate_Clocks" 3
+"TEMPLATE"
+["cdc/cdc_abstract"]
+"RULE_ORDER"
+[-1]
+"RULEGROUP"
+["clock-reset/INFORMATION"]
+-1 "Propagate_Resets" 3
+"TEMPLATE"
+["cdc/cdc_abstract"]
+"RULE_ORDER"
+[-1]
+"RULEGROUP"
+["clock-reset/INFORMATION"]
+-1 "SGDC_abstract_port03" 2
+"RULEGROUP"
+["SGDC Checks"]
+"BUILTIN"
+"1"
+-1 "Setup_port01" 3
+"TEMPLATE"
+["cdc/cdc_abstract"]
+"RULE_ORDER"
+[1]
+"RULEGROUP"
+["clock-reset/SETUP"]

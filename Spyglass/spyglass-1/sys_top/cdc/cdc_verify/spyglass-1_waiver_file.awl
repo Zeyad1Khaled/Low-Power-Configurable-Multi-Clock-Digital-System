@@ -1,0 +1,5 @@
+waive -rule {  {Reset_sync04}  }  -comment {Created by ICer on 23-Sep-2026 02:54:17}  -exact 
+waive -rule {  {Ac_cdc01a}  }  -comment {Created by ICer on 23-Sep-2026 03:16:51}  -exact 
+waive -rule {  {Ac_clockperiod03}  }  -comment {Created by ICer on 23-Sep-2026 03:27:36}  -exact 
+waive -rule {  {Ac_datahold01a}  }  -comment {Created by ICer on 23-Sep-2026 03:35:11  m4 3aref leh}  -exact 
+waive -rule {  {Ac_datahold01a}  }  -comment {Created by ICer on 23-Sep-2026 03:35:11  m4 3aref leh}  -exact 

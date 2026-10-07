@@ -1,0 +1,8 @@
+SCHEMA@@PName@@Dir@@Msb@@Lsb@@Desc@@DU@@DU_BBOX
+VALUE@@REF_CLK@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@UART_CLK@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@RST@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@RX_IN@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@TX_OUT@@OUTPUT@@0@@0@@-@@sys_top@@No
+VALUE@@parity_err@@OUTPUT@@0@@0@@-@@sys_top@@No
+VALUE@@stp_err@@OUTPUT@@0@@0@@-@@sys_top@@No

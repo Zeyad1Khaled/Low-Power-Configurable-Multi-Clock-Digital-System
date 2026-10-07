@@ -1,0 +1,15 @@
+Date Created     : 03-10-2026 19:02:51
+SpyGlass Version : SpyGlass_vL-2016.06
+Project Name     : spyglass-2
+Goal Name        : Design_Read
+Scenario Name    : default_scenario
+Top              : 
+
+Message Summary
+Severity   Non-Waived  Waived
+FATAL           6         0
+ERROR           0         0
+WARNING         0         0
+INFO            0         0
+
+-dashboard_data sync_crossings 

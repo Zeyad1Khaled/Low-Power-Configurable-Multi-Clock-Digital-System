@@ -1,0 +1,14 @@
+SpyGlass run started at 07:00:15 pm on Oct 03 2026 
+
+SpyGlass Predictive Analyzer(R) - Version SpyGlass_vL-2016.06
+Last compiled on May 20 2016
+
+All Rights Reserved. Use, disclosure or duplication
+without prior written permission of Synopsys Inc. is prohibited.
+Technical support: email spyglass_support@synopsys.com.
+
+Loading Policy: spyglass (Version: SpyGlass_vL-2016.06) from path: /home/synopsys/SpyGlass-L2016.06/SPYGLASS_HOME/policies/spyglass
+Loading Shared library libspyglassrules-Linux4.spyso from /home/synopsys/SpyGlass-L2016.06/SPYGLASS_HOME/lib/libspyglassrules-Linux4.spyso 
+Loading Shared library libsdcInitRules-Linux4.spyso from /home/synopsys/SpyGlass-L2016.06/SPYGLASS_HOME/lib/libsdcInitRules-Linux4.spyso 
+Loading Shared library librmerules-Linux4.spyso from /home/synopsys/SpyGlass-L2016.06/SPYGLASS_HOME/lib/librmerules-Linux4.spyso 
+6 {Rule-checking terminated due to FATAL errors - design syntax error}../Cell_Library/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.dbyes7 {Rule-checking terminated due to FATAL errors - usage or run error}../Cell_Library/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db {}../Cell_Library/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db../Cell_Library/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db ../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db {}../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db../Cell_Library/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db {}6 {Rule-checking terminated due to FATAL errors - design syntax error}
