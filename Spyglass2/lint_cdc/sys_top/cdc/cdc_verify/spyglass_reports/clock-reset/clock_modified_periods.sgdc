@@ -1,0 +1,7 @@
+
+current_design "sys_top"
+clock -name sys_top.rx_clk -period 271.25 -domain UART_DOMAIN
+clock -name sys_top.tx_clk -period 8680.00 -domain UART_DOMAIN
+clock -name sys_top.UART_CLK -period 271.25 -domain UART_DOMAIN
+clock -name sys_top.REF_CLK -period 10.00 -domain REF_DOMAIN
+clock -name VIRTUAL_RST_CLK -period 20.00 -domain VIRTUAL_RST_DOMAIN

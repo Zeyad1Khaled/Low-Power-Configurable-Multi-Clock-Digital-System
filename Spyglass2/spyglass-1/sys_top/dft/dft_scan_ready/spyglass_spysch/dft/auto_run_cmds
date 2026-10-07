@@ -1,0 +1,4 @@
+gui_add_menu -label {Trace to Clock in Shift}                                    -callback {dft_node_get_path_to_root_clock             -flat_object %h -mode shift} -in 10001
+gui_add_menu -label {Trace to Clock in Capture}                                  -callback {dft_node_get_path_to_root_clock             -flat_object %h -mode capture} -in 10001
+gui_add_menu -label {Trace to Uncontrollable Sources in Capture}                 -callback {dft_node_get_path_to_uncontrollable_sources -flat_object %h -mode capture} -in 10001
+gui_add_menu -label {Trace to Unobservable Sources in Capture}                   -callback {dft_node_get_path_to_unobservable_sources   -flat_object %h -mode capture} -in 10001

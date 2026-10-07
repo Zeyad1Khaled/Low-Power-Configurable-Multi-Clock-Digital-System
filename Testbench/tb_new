@@ -1,0 +1,193 @@
+`timescale 1ns/1ps
+module tb;
+    localparam int WIDTH=8, ALU_OUT_WIDTH=16, RF_DEPTH=16, RF_ADDR_WIDTH=4;
+    localparam int FUN_WIDTH=4, FIFO_DEPTH=8, FIFO_ADDR_WIDTH=3, PTR_SIZE=4;
+    localparam time REF_HALF_PERIOD=5ns, UART_HALF_PERIOD=135.6335ns;
+
+    integer rx_prescale=32;
+    integer error_count=0;
+    logic REF_CLK, UART_CLK, RST, RX_IN, TX_OUT, parity_err, stp_err;
+    // Keep DFT logic inactive during the normal functional regression.
+    // Leaving test_mode unconnected drives it to Z, which corrupts the
+    // clock/reset muxes in SYS_TOP_dft.
+    logic scan_clk, scan_rst, test_mode, SE;
+    logic [2:0] SI, SO;
+
+    sys_top #(.WIDTH(WIDTH), .ALU_OUT_WIDTH(ALU_OUT_WIDTH), .RF_DEPTH(RF_DEPTH),
+              .RF_ADDR_WIDTH(RF_ADDR_WIDTH), .FUN_WIDTH(FUN_WIDTH),
+              .FIFO_DEPTH(FIFO_DEPTH), .FIFO_ADDR_WIDTH(FIFO_ADDR_WIDTH),
+              .PTR_SIZE(PTR_SIZE)) DUT (
+        .REF_CLK(REF_CLK), .UART_CLK(UART_CLK), .RST(RST),
+        .RX_IN(RX_IN), .TX_OUT(TX_OUT),
+        .parity_err(parity_err), .stp_err(stp_err),
+        .scan_clk(scan_clk), .scan_rst(scan_rst),
+        .test_mode(test_mode), .SE(SE), .SI(SI), .SO(SO)
+    );
+
+    always #REF_HALF_PERIOD REF_CLK=~REF_CLK;
+    always #UART_HALF_PERIOD UART_CLK=~UART_CLK;
+
+    task automatic check_equal8(input string name, input logic [7:0] actual,
+                                input logic [7:0] expected);
+        begin
+            if (actual !== expected) begin
+                error_count=error_count+1;
+                $error("%s: expected 0x%02h, got 0x%02h", name, expected, actual);
+            end else $display("PASS: %s = 0x%02h", name, actual);
+        end
+    endtask
+
+    task automatic initialize;
+        begin
+            REF_CLK=0; UART_CLK=0; RX_IN=1; RST=0;
+            scan_clk=0; scan_rst=0; test_mode=0; SE=0; SI='0;
+            repeat (2) @(negedge UART_CLK);
+            RST=1;
+            // Wait for ref_rst, uart_rst, tx_rst, and rx_rst to release.
+            repeat (10) @(negedge DUT.rx_clk);
+        end
+    endtask
+
+    // The configuration used in this test has even parity enabled.
+    task automatic send_frame(input logic [7:0] data);
+        integer i;
+        logic parity_bit;
+        begin
+            parity_bit=^data;
+            RX_IN=0; repeat (rx_prescale) @(negedge DUT.rx_clk); // start
+            for (i=0; i<WIDTH; i=i+1) begin
+                RX_IN=data[i];
+                repeat (rx_prescale) @(negedge DUT.rx_clk);
+            end
+            RX_IN=parity_bit; repeat (rx_prescale) @(negedge DUT.rx_clk);
+            RX_IN=1;          repeat (rx_prescale) @(negedge DUT.rx_clk); // stop
+        end
+    endtask
+
+    task automatic send_write(input logic [3:0] address, input logic [7:0] data);
+        begin
+            send_frame(8'hAA); send_frame({4'h0,address}); send_frame(data);
+            repeat (8) @(posedge REF_CLK);
+        end
+    endtask
+
+    task automatic send_read(input logic [3:0] address);
+        begin send_frame(8'hBB); send_frame({4'h0,address}); end
+    endtask
+
+    task automatic send_alu_new(input logic [7:0] a, input logic [7:0] b,
+                                input logic [3:0] func);
+        begin
+            send_frame(8'hCC); send_frame(a); send_frame(b); send_frame({4'h0,func});
+        end
+    endtask
+
+    task automatic send_alu_stored(input logic [3:0] func);
+        begin send_frame(8'hDD); send_frame({4'h0,func}); end
+    endtask
+
+    // Decodes one entire UART TX frame.  TX data changes on tx_clk rising
+    // edges, so sample at falling edges (the middle of each bit period).
+    task automatic expect_tx_byte(input logic [7:0] expected);
+        integer i;
+        logic [7:0] received;
+        logic received_parity;
+        begin
+            @(negedge TX_OUT);           // UART start-bit transition
+            @(negedge DUT.tx_clk);       // middle/end of the start bit
+            @(negedge DUT.tx_clk); #1ps; // first data bit
+            for (i=0; i<WIDTH; i=i+1) begin
+                received[i]=TX_OUT;
+                if (i<WIDTH-1) begin @(negedge DUT.tx_clk); #1ps; end
+            end
+            @(negedge DUT.tx_clk); #1ps; received_parity=TX_OUT;
+            @(negedge DUT.tx_clk); #1ps;
+            if (TX_OUT !== 1'b1) begin
+                error_count=error_count+1;
+                $error("TX stop bit error: got %b", TX_OUT);
+            end
+            check_equal8("UART TX byte", received, expected);
+            if (received_parity !== (^expected)) begin
+                error_count=error_count+1;
+                $error("TX parity error for 0x%02h", expected);
+            end
+        end
+    endtask
+
+    initial begin
+        initialize;
+
+        // Initial UART configuration.  The first write uses reset prescale 32.
+        send_write(4'h2,8'h41); // prescale 16, even parity enabled
+        wait (DUT.Regfile_u.REG2 === 8'h41);
+        rx_prescale=16;
+        repeat (2) @(negedge DUT.rx_clk);
+        send_write(4'h3,8'h20);
+        wait (DUT.Regfile_u.REG3 === 8'h20);
+        repeat (4) @(posedge REF_CLK);
+        check_equal8("reg2 configuration",DUT.Regfile_u.REG2,8'h41);
+        check_equal8("reg3 configuration",DUT.Regfile_u.REG3,8'h20);
+        if (DUT.sys_ctrl_u.cfg_locked !== 1'b1) begin
+            error_count=error_count+1;
+            $error("Configuration did not lock");
+        end
+
+        send_write(4'h5,8'h07);
+        send_write(4'h9,8'h03);
+        check_equal8("reg5 normal write",DUT.Regfile_u.reg_file[5],8'h07);
+        check_equal8("reg9 normal write",DUT.Regfile_u.reg_file[9],8'h03);
+
+        fork
+            expect_tx_byte(8'h07);
+            send_read(4'h5);
+        join
+        fork
+            expect_tx_byte(8'h41);
+            send_read(4'h2);
+        join
+
+        // 3 + 4 = 0x0007, transmitted LSB then MSB.
+        fork
+            begin expect_tx_byte(8'h07); expect_tx_byte(8'h00); end
+            send_alu_new(8'd3,8'd4,4'h0);
+        join
+        check_equal8("ALU operand A",DUT.Regfile_u.REG0,8'h03);
+        check_equal8("ALU operand B",DUT.Regfile_u.REG1,8'h04);
+
+        // Stored operands: 3 * 4 = 0x000C.
+        fork
+            begin expect_tx_byte(8'h0C); expect_tx_byte(8'h00); end
+            send_alu_stored(4'h2);
+        join
+
+        // New operands: 100 / 2 = 50 = 0x0032.
+        fork
+            begin expect_tx_byte(8'h32); expect_tx_byte(8'h00); end
+            send_alu_new(8'd100,8'd2,4'h3);
+        join
+
+        // Generic writes must not change reserved locations after locking.
+        send_write(4'h0,8'h99); send_write(4'h1,8'h99);
+        send_write(4'h2,8'h99); send_write(4'h3,8'h99);
+        check_equal8("protected reg0",DUT.Regfile_u.REG0,8'h64);
+        check_equal8("protected reg1",DUT.Regfile_u.REG1,8'h02);
+        check_equal8("protected reg2",DUT.Regfile_u.REG2,8'h41);
+        check_equal8("protected reg3",DUT.Regfile_u.REG3,8'h20);
+
+        for (int address=4; address<RF_DEPTH; address++) begin
+            send_write(address[3:0],8'h09);
+            check_equal8("normal register write",DUT.Regfile_u.reg_file[address],8'h09);
+        end
+
+        if (error_count==0) $display("\n******** ALL TESTS PASSED ********\n");
+        else $display("\n******** TEST FAILED: %0d error(s) ********\n",error_count);
+        $stop;
+    end
+
+    // A failed protocol must report an error instead of making `run -all`
+    // run forever while a wait statement is blocked.
+    initial begin
+        #20ms;
+        $fatal(1, "Testbench timeout: functional test did not complete");
+    end
+endmodule

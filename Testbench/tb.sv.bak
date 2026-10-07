@@ -1,0 +1,167 @@
+`timescale 1ns/1ps
+module tb ;
+
+    localparam WIDTH=8;
+    localparam ALU_OUT_WIDTH=2*WIDTH;
+    localparam RF_DEPTH=16;
+    localparam RF_ADDR_WIDTH=$clog2(RF_DEPTH);
+    localparam FUN_WIDTH=4;
+    localparam FIFO_DEPTH=8;
+    localparam FIFO_ADDR_WIDTH=$clog2(FIFO_DEPTH);
+    localparam PTR_SIZE = FIFO_ADDR_WIDTH+1;
+
+    localparam REF_HALF_PERIOD=5;
+    localparam UART_HALF_PERIOD=135.6335;
+
+    integer rx_prescale = 32;
+
+logic REF_CLK,UART_CLK;
+logic RST;
+logic RX_IN;
+logic TX_OUT;
+
+sys_top #(              .WIDTH(WIDTH),
+                        .ALU_OUT_WIDTH(ALU_OUT_WIDTH),
+                        .RF_DEPTH(RF_DEPTH),
+                        .RF_ADDR_WIDTH(RF_ADDR_WIDTH),
+
+                        .FUN_WIDTH(FUN_WIDTH),
+                        .FIFO_DEPTH(FIFO_DEPTH),
+                        .FIFO_ADDR_WIDTH(FIFO_ADDR_WIDTH),
+                        .PTR_SIZE(PTR_SIZE) )
+DUT (
+.REF_CLK(REF_CLK),
+.UART_CLK(UART_CLK),
+.RST(RST),
+.RX_IN(RX_IN),
+.TX_OUT(TX_OUT)
+);
+
+always  #REF_HALF_PERIOD REF_CLK=~REF_CLK;
+always  #UART_HALF_PERIOD UART_CLK=~UART_CLK;
+
+task initialize;
+
+    REF_CLK=0;
+    UART_CLK=0;
+    RX_IN=1;
+    RST=0;
+
+    repeat (2) @(negedge UART_CLK);
+    RST=1;
+    repeat (1) @(negedge UART_CLK);
+
+endtask
+
+task automatic send_frame (
+    input logic [WIDTH-1:0] Data,
+    input logic par_bit
+);
+    begin
+        RX_IN=0;
+        repeat (rx_prescale) @(negedge DUT.rx_clk);
+        for(int i=0 ; i<WIDTH ; i++)begin
+            RX_IN=Data[i];
+            repeat (rx_prescale) @(negedge DUT.rx_clk);
+        end
+        RX_IN=par_bit;
+        repeat (rx_prescale) @(negedge DUT.rx_clk);
+        RX_IN = 1;
+        repeat (rx_prescale) @(negedge DUT.rx_clk);
+    end
+
+endtask
+
+task modify_configures (
+    input [WIDTH-1:0] CMD,
+    input [RF_ADDR_WIDTH-1:0] ADDR,
+    input [WIDTH-1:0] config_data
+);
+    begin
+    send_frame(CMD,^CMD);
+    send_frame(ADDR,^ADDR);
+    send_frame(config_data, ^config_data);
+    if(ADDR=='h02)begin
+        rx_prescale=config_data[WIDTH-1:2];
+    end
+    repeat (rx_prescale) @(negedge DUT.rx_clk);
+    end
+endtask
+
+task Wr_Data (
+    input [WIDTH-1:0] CMD,
+    input [RF_ADDR_WIDTH-1:0] ADDR,
+    input [WIDTH-1:0] wr_data
+);
+    begin
+    send_frame(CMD,^CMD);
+    send_frame(ADDR,^ADDR);
+    send_frame(wr_data, ^wr_data);
+    repeat (rx_prescale) @(negedge DUT.rx_clk);
+    end
+endtask
+
+task Rd_Data (
+    input [WIDTH-1:0] CMD,
+    input [RF_ADDR_WIDTH-1:0] ADDR
+);
+    begin
+    send_frame(CMD,^CMD);
+    send_frame(ADDR,^ADDR);
+    repeat (rx_prescale) @(negedge DUT.rx_clk);
+    end
+endtask
+
+task ALU_W_OP (
+    input [WIDTH-1:0] CMD,
+    input [WIDTH-1:0] OP_A,
+    input [WIDTH-1:0] OP_B,
+    input [FUN_WIDTH-1:0] ALU_FUNC
+);
+    begin
+    send_frame(CMD,^CMD);
+    send_frame(OP_A,^OP_A);
+    send_frame(OP_B, ^OP_B);
+    send_frame(ALU_FUNC, ^ALU_FUNC);
+    repeat (rx_prescale) @(negedge DUT.rx_clk);
+    end
+endtask
+
+task ALU_W_NOP (
+    input [WIDTH-1:0] CMD,
+    input [FUN_WIDTH-1:0] ALU_FUNC
+);
+    begin
+    send_frame(CMD,^CMD);
+    send_frame(ALU_FUNC, ^ALU_FUNC);
+    repeat (rx_prescale) @(negedge DUT.rx_clk);
+    end
+endtask
+
+initial begin
+
+    initialize;
+    repeat (10) @(negedge DUT.rx_clk);
+    //configure reg2 rx_prescale and parity type and parity en
+
+    modify_configures('hAA,'h02,'h41);
+    modify_configures('hAA,'h03,'h20);
+/*
+    Wr_Data('hAA,'h05,'b111);
+    Wr_Data('hAA,'h09,'b011);
+
+    Rd_Data('hBB,'h05);
+    Rd_Data('hBB,'h02);
+
+    ALU_W_OP('hCC,3,4,'h0000); //add operation
+    Rd_Data('hBB,'h00);
+    ALU_W_NOP('hDD,'b0010);//multiply
+    ALU_W_OP('hCC,100,2,'b0011); //add operation */
+    for(int i = 0; i <= 4'hF; i++)begin
+        Wr_Data('hAA,i,'b1001);
+        repeat (rx_prescale) @(negedge DUT.rx_clk);
+    end
+    $stop;
+end
+
+endmodule

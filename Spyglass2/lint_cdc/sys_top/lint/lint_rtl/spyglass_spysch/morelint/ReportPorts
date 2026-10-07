@@ -1,0 +1,14 @@
+SCHEMA@@PName@@Dir@@Msb@@Lsb@@Desc@@DU@@DU_BBOX
+VALUE@@REF_CLK@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@UART_CLK@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@RST_N@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@UART_RX_IN@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@scan_clk@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@scan_rst@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@test_mode@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@SE@@INPUT@@0@@0@@-@@sys_top@@No
+VALUE@@SI@@INPUT@@3@@0@@-@@sys_top@@No
+VALUE@@SO@@OUTPUT@@3@@0@@-@@sys_top@@No
+VALUE@@UART_TX_O@@OUTPUT@@0@@0@@-@@sys_top@@No
+VALUE@@parity_error@@OUTPUT@@0@@0@@-@@sys_top@@No
+VALUE@@framing_error@@OUTPUT@@0@@0@@-@@sys_top@@No

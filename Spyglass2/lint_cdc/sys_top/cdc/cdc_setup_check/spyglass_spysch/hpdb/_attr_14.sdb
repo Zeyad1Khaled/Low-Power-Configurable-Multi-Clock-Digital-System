@@ -1,0 +1,15 @@
+1
+1
+1 
+8
+31
+Data_path_tag
+Data_path_tag
+sys_top.tx_clk&&UART_DOMAIN&&1&&no
+sys_top.rx_clk&&UART_DOMAIN&&1&&no
+sys_top.REF_CLK&&REF_DOMAIN&&0&&no
+sys_top.UART_CLK&&UART_DOMAIN&&1&&no
+sys_top.REF_CLK&&REF_DOMAIN&&0&&no;sys_top.tx_clk&&UART_DOMAIN&&1&&no
+sys_top.UART_CLK&&UART_DOMAIN&&1&&no;sys_top.rx_clk&&UART_DOMAIN&&1&&no
+sys_top.REF_CLK&&REF_DOMAIN&&0&&no;sys_top.rx_clk&&UART_DOMAIN&&1&&no
+VIRTUAL_RST_CL&&VIRTUAL_RST_CL&&3&&no

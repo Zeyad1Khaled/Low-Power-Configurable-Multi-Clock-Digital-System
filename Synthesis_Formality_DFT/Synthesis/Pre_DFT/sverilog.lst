@@ -1,0 +1,9 @@
+/home/ICer/UART_System/rtl/UART/Package.sv
+/home/ICer/UART_System/rtl/System_Top/System_TOP.sv
+/home/ICer/UART_System/rtl/ClkDiv_ClkGate/Clk_divider.sv
+/home/ICer/UART_System/rtl/SYS_Control_RegisterFile/SYS_CTRL.sv
+/home/ICer/UART_System/rtl/UART/MUX.sv
+/home/ICer/UART_System/rtl/UART/RX_FSM.sv
+/home/ICer/UART_System/rtl/UART/TX_FSM.sv
+/home/ICer/UART_System/rtl/UART/TX_TOP.sv
+/home/ICer/UART_System/rtl/UART/UART_RX.sv

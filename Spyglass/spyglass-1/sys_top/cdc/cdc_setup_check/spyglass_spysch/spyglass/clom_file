@@ -1,0 +1,124 @@
+##This file is genrated to have command line decompiled Info even in Console
+##(To generate SIGN_OFF report having command line decompiled)
+Run Setup Info
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+===============================================================================
+Option          Value             Origin  File                           LineNo
+===============================================================================
+--goal_info     cdc/cdc_setup_check@ CmdLine -                              -
+--strict_sgdc_check <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 39
+-awl            ./spyglass-1/sys_top/cdc/cdc_setup_check/spyglass-1_waiver_file.awl CmdLine -                              -
+-batch          <ON>              CmdLine -                              -
+-dbdir          ./spyglass-1/sys_top/.SG_SaveRestoreDB CmdLine -                              -
+-default_waiver_file ./spyglass-1/sys_top/cdc/cdc_setup_check/spyglass-1_waiver_file.awl CmdLine -                              -
+-enableSV       <ON>              CmdLine -                              -
+-enable_const_prop_thru_seq <ON>              CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 52
+-enable_save_restore <ON>              CmdLine -                              -
+-enable_save_restore_builtin true              CmdLine -                              -
+-inferblackbox  <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 29
+-lib            WORK=>./spyglass-1/sys_top/WORK CmdLine -                              -
+                SYNOPSYS=>$SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS Config  $SPYGLASS_HOME/.spyglass.setup 25
+-mixed          <ON>              CmdLine -                              -
+-nl             <ON>              CmdLine -                              -
+-overloadrules  Clock_info03a+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 68
+                Clock_info05+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 71
+                Clock_info05a+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 74
+                Clock_info05b+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 77
+                Ac_resetvalue01+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 80
+                Reset_info09a+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 83
+                Clock_converge01+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 86
+                Reset_check03+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 91
+                Reset_check10+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 94
+                Reset_check11+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 97
+                Reset_check12+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 100
+                Clock_info03c+severity=Error CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 105
+-policy         clock-reset       CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 45
+-projectwdir    ./spyglass-1      CmdLine -                              -
+-report         moresimple        Config  $SPYGLASS_HOME/.spyglass.setup 17
+-rules          Clock_info03a     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 67
+                Clock_info05      CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 70
+                Clock_info05b     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 76
+                Ac_resetvalue01   CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 79
+                Reset_info09a     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 82
+                Clock_converge01  CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 85
+                Ar_converge01     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 88
+                Reset_check03     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 90
+                Reset_check10     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 93
+                Reset_check11     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 96
+                Reset_check12     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 99
+                Clock_info03b     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 102
+                Clock_info03c     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 104
+                Setup_port01      CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 107
+                Setup_blackbox01  CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 109
+                Clock_check10     CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 111
+                Clock_info02      CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 113
+                Reset_info02      CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 115
+                Clock_info15      CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 117
+                Ar_syncrst_setupcheck01 CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 119
+                Info_Case_Analysis CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 121
+                FalsePathSetup    CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 123
+                Setup_library01   CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 125
+-sdc_generate_cfp yes               CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 60
+-sgdc           spy_cons.sgdc     CmdLine -                              -
+-sortmethod     du                Config  $SPYGLASS_HOME/.spyglass.setup 27
+-template       cdc/cdc_setup_check CmdLine -                              -
+-templatedir    /home/synopsys/SpyGlass-L2016.06/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff CmdLine -                              -
+-top            sys_top           CmdLine -                              -
+-wdir           ./spyglass-1/sys_top/cdc/cdc_setup_check CmdLine -                              -
+<design_files>  ../rtl/DataSynch_RstSynch_PulseGen/DATA_SYNCH.v APICall -                              -
+                /home/ICer/UART_System/rtl/ALU/ALU.v APICall -                              -
+                /home/ICer/UART_System/rtl/ClkDiv_ClkGate/CLK_GATE.v APICall -                              -
+                /home/ICer/UART_System/rtl/ClkDiv_ClkGate/Clk_divider.sv APICall -                              -
+                /home/ICer/UART_System/rtl/DataSynch_RstSynch_PulseGen/PULSE_GEN.v APICall -                              -
+                /home/ICer/UART_System/rtl/DataSynch_RstSynch_PulseGen/RST_SYNCH.v APICall -                              -
+                /home/ICer/UART_System/rtl/FIFO/Async_FIFO.v APICall -                              -
+                /home/ICer/UART_System/rtl/FIFO/DF_SYNC.v APICall -                              -
+                /home/ICer/UART_System/rtl/FIFO/FIFO_MEM_CNTRL.v APICall -                              -
+                /home/ICer/UART_System/rtl/FIFO/FIFO_RD.v APICall -                              -
+                /home/ICer/UART_System/rtl/FIFO/FIFO_WR.v APICall -                              -
+                /home/ICer/UART_System/rtl/SYS_Control_RegisterFile/Register.v APICall -                              -
+                /home/ICer/UART_System/rtl/SYS_Control_RegisterFile/SYS_CTRL.sv APICall -                              -
+                /home/ICer/UART_System/rtl/System_Top/System_TOP.sv APICall -                              -
+                /home/ICer/UART_System/rtl/UART/DATA_SYNC.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/Data_Sampling.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/DeSerializer.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/Edge_Bit_Counter.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/MUX.sv APICall -                              -
+                /home/ICer/UART_System/rtl/UART/Package.sv APICall -                              -
+                /home/ICer/UART_System/rtl/UART/Parity_Calc.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/Parity_Chk.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/RX_FSM.sv APICall -                              -
+                /home/ICer/UART_System/rtl/UART/Serializer.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/Stp_Chk.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/Strt_Chk.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/TX_FSM.sv APICall -                              -
+                /home/ICer/UART_System/rtl/UART/TX_TOP.sv APICall -                              -
+                /home/ICer/UART_System/rtl/UART/UART.v APICall -                              -
+                /home/ICer/UART_System/rtl/UART/UART_RX.sv APICall -                              -
+
+
+Rules Parameter
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+===============================================================================
+Parameter       Origin  File                           LineNo
+===============================================================================
+-enable_debug_data CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 58
+VALUE -- yes
+(KNOWN_PARAM)
+-handle_combo_arc CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 61
+VALUE -- yes
+(KNOWN_PARAM)
+-hier_wild_card CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/cdc/cdc_setup_check.spq 59
+VALUE -- no
+(KNOWN_PARAM)
+
+
+Policy Info
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+===============================================================================
+NameOfPolicy    VersionNumber   Path (from where policy loaded)
+===============================================================================
+spyglass        SpyGlass_vL-2016.06 $SPYGLASS_HOME/policies/spyglass
+clock-reset     SpyGlass_vL-2016.06 $SPYGLASS_HOME/policies/clock
+
+

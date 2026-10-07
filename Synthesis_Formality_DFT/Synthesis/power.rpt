@@ -1,0 +1,41 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : sys_top
+Version: O-2018.06-SP1
+Date   : Mon Oct  5 06:32:53 2026
+****************************************
+
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/UART_System/Cell_Library/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+sys_top                                6.38e-02    0.406 1.05e+07    0.480 100.0
+  ALU_CG (CLK_GATE)                    3.66e-03 1.95e-03 1.54e+04 5.63e-03   1.2
+  RX_CLK (clk_div_WIDTH6_test_0)       1.05e-05 3.29e-04 8.61e+04 4.26e-04   0.1
+  TX_CLK (clk_div_WIDTH6_test_1)       5.27e-07 4.61e-04 1.85e+05 6.47e-04   0.1
+1

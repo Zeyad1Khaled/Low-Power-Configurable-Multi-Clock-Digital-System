@@ -1,0 +1,85 @@
+#!SPYGLASS_PROJECT_FILE
+#!VERSION 3.0
+#  -------------------------------------------------------------------
+#  This is a software generated project file. Manual edits to this file could be lost during the next save operation
+#  Copyright Synopsys Inc.
+#  Last Updated By: SpyGlass SpyGlass_vL-2016.06
+#  Last Updated On Wed Sep 23 04:01:40 2026
+#
+#  -------------------------------------------------------------------
+
+##Data Import Section
+
+read_file -type sourcelist ../rtl/rtl.f
+read_file -type sgdc spy_cons.sgdc
+read_file -type hdl /home/ICer/UART_System/rtl/UART/Package.sv
+read_file -type hdl /home/ICer/UART_System/rtl/System_Top/System_TOP.sv
+read_file -type hdl /home/ICer/UART_System/rtl/ALU/ALU.v
+read_file -type hdl /home/ICer/UART_System/rtl/ClkDiv_ClkGate/Clk_divider.sv
+read_file -type hdl /home/ICer/UART_System/rtl/ClkDiv_ClkGate/CLK_GATE.v
+read_file -type hdl /home/ICer/UART_System/rtl/DataSynch_RstSynch_PulseGen/PULSE_GEN.v
+read_file -type hdl /home/ICer/UART_System/rtl/DataSynch_RstSynch_PulseGen/RST_SYNCH.v
+read_file -type hdl /home/ICer/UART_System/rtl/FIFO/Async_FIFO.v
+read_file -type hdl /home/ICer/UART_System/rtl/FIFO/DF_SYNC.v
+read_file -type hdl /home/ICer/UART_System/rtl/FIFO/FIFO_MEM_CNTRL.v
+read_file -type hdl /home/ICer/UART_System/rtl/FIFO/FIFO_RD.v
+read_file -type hdl /home/ICer/UART_System/rtl/FIFO/FIFO_WR.v
+read_file -type hdl /home/ICer/UART_System/rtl/SYS_Control_RegisterFile/Register.v
+read_file -type hdl /home/ICer/UART_System/rtl/SYS_Control_RegisterFile/SYS_CTRL.sv
+read_file -type hdl /home/ICer/UART_System/rtl/UART/Data_Sampling.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/DATA_SYNC.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/DeSerializer.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/Edge_Bit_Counter.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/MUX.sv
+read_file -type hdl /home/ICer/UART_System/rtl/UART/Parity_Calc.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/Parity_Chk.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/RX_FSM.sv
+read_file -type hdl /home/ICer/UART_System/rtl/UART/Serializer.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/Stp_Chk.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/Strt_Chk.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/TX_FSM.sv
+read_file -type hdl /home/ICer/UART_System/rtl/UART/TX_TOP.sv
+read_file -type hdl /home/ICer/UART_System/rtl/UART/UART.v
+read_file -type hdl /home/ICer/UART_System/rtl/UART/UART_RX.sv
+read_file -type verilog ../rtl/DataSynch_RstSynch_PulseGen/DATA_SYNCH.v
+
+##Common Options Section
+
+set_option projectwdir .
+set_option language_mode mixed
+set_option designread_enable_synthesis yes
+set_option designread_disable_flatten no
+set_option enableSV yes
+set_option top sys_top
+set_option active_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+
+
+##Goal Setup Section
+
+current_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+
+
+current_goal lint/lint_rtl -alltop
+read_file -type awl ./spyglass-1/lint/lint_rtl/spyglass-1_waiver_file.awl
+set_goal_option default_waiver_file ./spyglass-1/lint/lint_rtl/spyglass-1_waiver_file.awl
+
+
+current_goal lint/lint_rtl -top sys_top
+read_file -type awl ./spyglass-1/sys_top/lint/lint_rtl/spyglass-1_waiver_file.awl
+set_goal_option default_waiver_file ./spyglass-1/sys_top/lint/lint_rtl/spyglass-1_waiver_file.awl
+
+
+current_goal cdc/cdc_setup_check -top sys_top
+read_file -type awl ./spyglass-1/sys_top/cdc/cdc_setup_check/spyglass-1_waiver_file.awl
+set_goal_option default_waiver_file ./spyglass-1/sys_top/cdc/cdc_setup_check/spyglass-1_waiver_file.awl
+
+
+current_goal cdc/cdc_verify_struct -top sys_top
+read_file -type awl ./spyglass-1/sys_top/cdc/cdc_verify_struct/spyglass-1_waiver_file.awl
+set_goal_option default_waiver_file ./spyglass-1/sys_top/cdc/cdc_verify_struct/spyglass-1_waiver_file.awl
+
+
+current_goal cdc/cdc_verify -top sys_top
+read_file -type awl ./spyglass-1/sys_top/cdc/cdc_verify/spyglass-1_waiver_file.awl
+set_goal_option default_waiver_file ./spyglass-1/sys_top/cdc/cdc_verify/spyglass-1_waiver_file.awl
+

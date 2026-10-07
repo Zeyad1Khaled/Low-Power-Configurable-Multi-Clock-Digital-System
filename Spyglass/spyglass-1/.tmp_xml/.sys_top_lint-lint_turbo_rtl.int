@@ -1,0 +1,8 @@
+INPUT@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_turbo_rtl/spyglass_reports@@/home/ICer/UART_System/Spyglass/spyglass-1/html_reports/data_files/@@sys_top@@lint-lint_turbo_rtl@@
+COPY@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_turbo_rtl/spyglass_reports/moresimple.rpt@@data_files/sys_top_lint-lint_turbo_rtl_moresimple.rpt@@
+COPY@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_turbo_rtl/spyglass_reports/no_msg_reporting_rules.rpt@@data_files/sys_top_lint-lint_turbo_rtl_no_msg_reporting_rules.rpt@@
+REGEN@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_turbo_rtl/spyglass_reports/ADV-LINT.rpt@@data_files/sys_top_lint-lint_turbo_rtl_ADV-LINT.rpt.html@@
+REGEN@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_turbo_rtl/spyglass_reports/auto_verify.rpt@@data_files/sys_top_lint-lint_turbo_rtl_auto_verify.rpt.html@@
+REGEN@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_turbo_rtl/spyglass_reports/moresimple_turbo.rpt@@data_files/sys_top_lint-lint_turbo_rtl_moresimple_turbo.rpt.html@@
+PROCESS@@Audits@@area@@miscellaneous@@starc2002@@auto-verify@@timing@@morelint@@latch@@lint@@simulation@@erc@@starc2005@@starc@@openmore@@SpyGlass
+COPY@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_turbo_rtl/spyglass.log@@data_files/sys_top_lint-lint_turbo_rtl_spyglass.log@@

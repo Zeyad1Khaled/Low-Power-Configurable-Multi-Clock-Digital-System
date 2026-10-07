@@ -1,0 +1,26 @@
+################################################################################
+#
+# Purpose: 
+#   This file specifies the assertion details along with their run status.
+#   Functional analysis is done only for those assertions that are enabled
+#   in the property file.
+#
+# Format: 
+#   
+#   RuleName: <rule-name>
+#   <selection> <type> <status> <file-name> <line-num> <hier> [ <info> ]
+#   .....
+#   
+#   
+################################################################################
+RuleName: Ac_conv02 
+off  Assertion   PROVED              ../rtl/FIFO/FIFO_RD.v  25  "sys_top.FIFO_u.U5"  [sys_top.FIFO_u.U5.empty_next]
+
+RuleName: Ac_cdc01a 
+on   Assertion   Partially-Proved    ../rtl/FIFO/DF_SYNC.v  20  "sys_top.FIFO_u.U2_WRptr_sync"  [SFlop:sys_top.FIFO_u.w_ptr[3] SClk:sys_top.REF_CLK DFlop:sys_top.FIFO_u.U2_WRptr_sync.s0[3] DClk:sys_top.tx_clk]
+
+RuleName: Ac_datahold01a 
+off  Assertion   PROVED              ../rtl/DataSynch_RstSynch_PulseGen/DATA_SYNCH.v  35  "sys_top.Rx2SysCtrl"  [Des: "sys_top.Rx2SysCtrl.\sync_bus_reg[0] .Q", Src: "sys_top.UART_TX_RX.U0_UART_RX.U3.\P_DATA_reg[0] .Q"]
+on   Assertion   Partially-Proved    ../rtl/UART/Serializer.v  27  "sys_top.UART_TX_RX.U0_UART_TX.U1"  [Des: "sys_top.UART_TX_RX.U0_UART_TX.U1.\mem_reg[0] .Q", Src: "sys_top.FIFO_u.U1.\mem_reg[7][0] .Q"]
+on   Assertion   Partially-Proved    ../rtl/UART/Parity_Calc.v  18  "sys_top.UART_TX_RX.U0_UART_TX.U3"  [Des: "sys_top.UART_TX_RX.U0_UART_TX.U3.par_bit_reg.Q", Src: "sys_top.FIFO_u.U1.\mem_reg[7][0] .Q"]
+on   Assertion   Partially-Proved    ../rtl/UART/Serializer.v  49  "sys_top.UART_TX_RX.U0_UART_TX.U1"  [Des: "sys_top.UART_TX_RX.U0_UART_TX.U1.ser_data_reg.Q", Src: "sys_top.FIFO_u.U1.\mem_reg[7][0] .Q"]
