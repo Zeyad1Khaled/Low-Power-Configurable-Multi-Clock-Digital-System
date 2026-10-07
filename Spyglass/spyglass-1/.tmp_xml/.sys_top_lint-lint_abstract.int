@@ -1,5 +1,0 @@
-INPUT@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_abstract/spyglass_reports@@/home/ICer/UART_System/Spyglass/spyglass-1/html_reports/data_files/@@sys_top@@lint-lint_abstract@@
-COPY@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_abstract/spyglass_reports/moresimple.rpt@@data_files/sys_top_lint-lint_abstract_moresimple.rpt@@
-COPY@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_abstract/spyglass_reports/no_msg_reporting_rules.rpt@@data_files/sys_top_lint-lint_abstract_no_msg_reporting_rules.rpt@@
-PROCESS@@Audits@@area@@timing@@lowpower@@clock-reset@@const_intern1@@constraints@@dft@@dft_dsm@@power_est@@txv@@starc2005@@simulation@@erc@@starc2002@@starc@@openmore@@morelint@@miscellaneous@@latch@@lint@@SpyGlass@@abstract_view
-COPY@@/home/ICer/UART_System/Spyglass/spyglass-1/lint/lint_abstract/spyglass.log@@data_files/sys_top_lint-lint_abstract_spyglass.log@@
