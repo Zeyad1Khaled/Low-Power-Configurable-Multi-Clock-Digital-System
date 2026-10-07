@@ -43,7 +43,7 @@ register, and data-flow details.
 
 | Parameter | Default |
 | --- | ---: |
-| Reference clock | 50 MHz |
+| Reference clock | 100 MHz |
 | UART reference clock | 3.6864 MHz |
 | UART data width | 8 bits |
 | Register file | 16 × 8 bits |
