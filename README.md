@@ -12,7 +12,7 @@ management, CDC synchronizers, and an asynchronous FIFO.**
 
 The system accepts command bytes over UART, processes register-file or ALU
 operations, and returns response bytes over UART. The control and computation
-logic use a 50 MHz reference clock; the serial interface uses a 3.6864 MHz
+logic use a 100 MHz reference clock; the serial interface uses a 3.6864 MHz
 UART reference clock with programmable clock division. Dedicated synchronizers
 and an asynchronous FIFO bridge the clock domains.
 
@@ -115,7 +115,7 @@ results include:
 | Formality | Verification succeeded: 343 passing compare points, no failing compare points |
 | SpyGlass CDC verification | 0 failed properties; 4 partial proofs out of 6 properties |
 | SpyGlass RTL lint | Run summary records 1 waived error and 4 waived warnings; no non-waived errors or warnings |
-| Post-DFT test design rule check | 1 constant-one latch violation is reported |
+| Post-DFT test design rule check | 1 constant-one latch violation is reported , Intentional due to use of ICG Cell |
 | PNR geometry and antenna checks | Reports state no geometry DRC violations and no antenna violations |
 
 These are the results present in the archived reports, not a claim that all
