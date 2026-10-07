@@ -6,7 +6,7 @@ output trees.
 
 | Directory | Contents |
 | --- | --- |
-| `spyglass2/` | Latest consolidated reports and run summary for RTL lint, CDC setup, clock/reset integrity, structural CDC, and CDC verification |
+| `spyglass/` | Latest consolidated reports and run summary for RTL lint, CDC setup, clock/reset integrity, structural CDC, and CDC verification |
 | `synthesis/pre-dft/` | Pre-DFT synthesis reports |
 | `synthesis/post-dft/` | Latest post-DFT synthesis reports |
 | `formality/` | Formality comparison reports and run logs |

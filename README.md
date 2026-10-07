@@ -1,279 +1,142 @@
 # Low-Power Configurable Multi-Clock Digital System
 
-> A complete ASIC implementation of a multi-clock RTL system with integrated digital subsystems, optimized for low-power operation and verified through the full semiconductor design flow.
+**UART-controlled digital system integrating a register file, ALU, clock
+management, CDC synchronizers, and an asynchronous FIFO.**
 
----
+[System design document](docs/Final_System.pdf) ·
+[Architecture](docs/architecture.md) ·
+[UART command protocol](docs/uart-protocol.md) ·
+[Verification results](docs/verification-results.md)
 
-## Table of Contents
+## Overview
 
-- [Project Overview](#project-overview)
-- [System Architecture](#system-architecture)
-- [Key Features](#key-features)
-- [Design Highlights](#design-highlights)
-- [Project Structure](#project-structure)
-- [Tools & Technologies](#tools--technologies)
-- [Getting Started](#getting-started)
-- [Design Flow](#design-flow)
-- [Verification & Analysis](#verification--analysis)
-- [Results & Achievements](#results--achievements)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [License](#license)
+The system accepts command bytes over UART, processes register-file or ALU
+operations, and returns response bytes over UART. The control and computation
+logic use a 50 MHz reference clock; the serial interface uses a 3.6864 MHz
+UART reference clock with programmable clock division. Dedicated synchronizers
+and an asynchronous FIFO bridge the clock domains.
 
----
+The RTL is parameterized for data width, register-file depth, FIFO depth, and
+ALU result width. The default configuration uses 8-bit data, a 16-entry
+register file, an 8-entry asynchronous FIFO, and a 16-bit ALU result.
 
-## Project Overview
+## Architecture
 
-This repository contains a complete, silicon-ready ASIC implementation of a low-power, configurable multi-clock digital system. The design integrates multiple functional blocks including communication interfaces, computation units, memory structures, and clock management circuits, all optimized for minimal power consumption.
-
-Project Status: Complete (RTL through GDSII)
-
----
-
-## System Architecture
-
-### Core Components
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│          Low-Power Multi-Clock Digital System                │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
-│  │   UART I/O   │  │     ALU      │  │ Register File│       │
-│  │  TX/RX       │  │   (8/16-bit) │  │ (Dual-port)  │       │
-│  └──────────────┘  └──────────────┘  └──────────────┘       │
-│                                                               │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
-│  │Async FIFO    │  │ Clock Divider│  │Clock Gating  │       │
-│  │              │  │              │  │              │       │
-│  └──────────────┘  └──────────────┘  └──────────────┘       │
-│                                                               │
-│  ┌──────────────┐  ┌──────────────┐                          │
-│  │ Synchronizers│  │System Control│                          │
-│  │ (CDC Logic)  │  │              │                          │
-│  └──────────────┘  └──────────────┘                          │
-│                                                               │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    HOST[UART master] --> RX[UART receiver]
+    RX --> SYNC[Data synchronizer]
+    SYNC --> CTRL[System controller<br/>REF_CLK]
+    CTRL <--> RF[Register file]
+    RF --> ALU[ALU<br/>gated REF_CLK]
+    ALU --> CTRL
+    CTRL --> FIFO[Async FIFO<br/>REF_CLK to TX clock]
+    FIFO --> TX[UART transmitter]
+    TX --> HOST
+    CFG[Register-file configuration] --> DIV[Clock dividers]
+    UARTCLK[UART_CLK] --> DIV
+    DIV --> RX
+    DIV --> TX
 ```
 
-### Functional Blocks
+| Block | Role |
+| --- | --- |
+| System controller | Decodes UART commands and sequences register, ALU, and response operations |
+| Register file | Stores ALU operands, UART/clock configuration, and general-purpose data |
+| ALU | Executes arithmetic, logic, comparison, and shift operations |
+| UART RX/TX | Receives command frames and serializes response data |
+| Clock dividers and gate | Generate UART clocks and reduce unnecessary ALU clock activity |
+| Reset/data synchronizers | Synchronize resets and received data across clock domains |
+| Asynchronous FIFO | Buffers response bytes between the reference and transmit clock domains |
 
-| Module | Description | Features |
-|--------|-------------|----------|
-| UART | Serial communication | TX/RX with configurable baud rate |
-| ALU | Arithmetic logic unit | Multiple operations, 8/16-bit support |
-| Register File | Storage elements | Dual-port with synchronous writes |
-| Async FIFO | Cross-domain FIFO | CDC-safe data transfer |
-| Clock Divider | Frequency scaling | Programmable division ratios |
-| Clock Gating | Dynamic power reduction | Integrated with system controller |
-| Synchronizers | CDC synchronization | Multi-stage flip-flop synchronization |
-| System Controller | Centralized control | FSM-based system management |
+See [the architecture note](docs/architecture.md) for the clocking, reset,
+register, and data-flow details.
 
----
+## System specifications
 
-## Key Features
+| Parameter | Default |
+| --- | ---: |
+| Reference clock | 50 MHz |
+| UART reference clock | 3.6864 MHz |
+| UART data width | 8 bits |
+| Register file | 16 × 8 bits |
+| ALU result | 16 bits |
+| Asynchronous FIFO | 8 × 8 bits |
+| UART parity | Enabled; even parity |
+| UART prescale | 32 |
+| TX clock division ratio | 32 |
 
-- Multi-Clock Domain Design
-  - Asynchronous clock domain crossing (CDC)
-  - Proper synchronization and metastability handling
-  - Verified with CDC analysis tools
+At the default clock and division settings, the UART bit rate is 115,200 baud.
+The reset values are `REG2 = 0x81` (parity enabled, even parity, prescale 32)
+and `REG3 = 0x20` (TX division ratio 32).
 
-- Low-Power Optimization
-  - Clock gating for inactive modules
-  - Optimized data paths
-  - Minimal clock skew design
+## UART command summary
 
-- Comprehensive Verification
-  - Self-checking Verilog testbench
-  - Functional coverage validation
-  - Formal verification with Synopsys Formality
+Each command consists of 8-bit UART data frames. The receiver supports the
+configured optional parity bit. Command bytes and payloads are sent in this
+order:
 
-- Production-Ready Design
-  - Full lint and rule-checking analysis
-  - Timing closure across process corners
-  - DFT insertion and testability assessment
-  - Post-layout verification
+| Command | Byte sequence | Action |
+| --- | --- | --- |
+| `0xAA` | command, address, data | Write configuration/general-purpose register |
+| `0xBB` | command, address | Read register and return its data |
+| `0xCC` | command, operand A, operand B, ALU function | Run ALU with command-supplied operands |
+| `0xDD` | command, ALU function | Run ALU using operands already stored in `REG0` and `REG1` |
 
----
+ALU responses are 16 bits and are returned as two 8-bit bytes, least-significant
+byte first. The full operation encoding and register map are in
+[the UART protocol reference](docs/uart-protocol.md).
 
-## Design Highlights
-
-### RTL & Verification Phase
-- Functional verification using a self-checking Verilog testbench
-- Corner case validation and protocol checks
-- Lint and analysis using SpyGlass
-- CDC and RDC checks for safety and reliability
-
-### Synthesis & Optimization Phase
-- Synopsys Design Compiler synthesis
-- Multi-corner timing analysis across SS, TT, and FF conditions
-- Clock tree synthesis planning
-- Area and power optimization
-
-### Implementation Phase
-- Cadence Innovus place-and-route
-- CTS, timing optimization, and routing
-- DRC cleanup and resolution
-- GDSII generation and post-layout signoff
-
-### Formal Verification
-- Synopsys Formality equivalence checking
-- RTL-to-netlist verification
-- Post-synthesis and post-layout validation
-
----
-
-## Project Structure
+## Repository layout
 
 ```text
-Low-Power-Configurable-Multi-Clock-Digital-System/
-├── README.md
-├── Cell_Library/
-├── FINAL_SYSTEM_RTL_INTEGRATION_Zeyad_Khaled.zip
-├── rtl/
-│   ├── ALU/
-│   ├── ClkDiv_ClkGate/
-│   ├── DataSynch_RstSynch_PulseGen/
-│   ├── FIFO/
-│   ├── SYS_Control_RegisterFile/
-│   ├── System_Top/
-│   └── UART/
-├── Testbench/
-├── Spyglass2/
-│   ├── lint_cdc.prj
-│   ├── spy_cons.sgdc
-│   └── waivers/
-├── reports/
-│   ├── formality/
-│   ├── pnr/
-│   ├── spyglass2/
-│   └── synthesis/
-├── Synthesis_Formality_DFT/
-├── System_pnr/
-├── run.do
-└── wave.do
+.
+├── Cell_Library/              # Standard-cell timing libraries
+├── Spyglass/                  # SpyGlass project, constraints, and waivers
+├── Synthesis_Formality_DFT/   # Synthesis, formal, and DFT flow artifacts
+├── System_pnr/                # Place-and-route inputs and implementation data
+├── Testbench/                 # System-level SystemVerilog testbench
+├── docs/                      # Design reference PDF and project notes
+├── reports/                   # Curated verification and implementation reports
+├── rtl/                       # Synthesizable RTL and source lists
+├── run.do                     # ModelSim/Questa simulation entry point
+└── wave.do                    # Waveform setup
 ```
 
-The `reports/` directory contains the selected verification and implementation
-results, organized by tool and test. `Spyglass2/` retains the SpyGlass project
-configuration and its waiver inputs; its consolidated results are under
-`reports/spyglass2/`.
+## Simulation
 
----
+The project testbench is `Testbench/tb.sv`; its RTL compile order is maintained
+in `rtl/rtl.f`. With ModelSim/Questa installed, start the simulator from the
+repository root and run:
 
-## Tools & Technologies
-
-### Design & Verification
-| Tool | Purpose |
-|------|---------|
-| Synopsys VCS / Xcelium | RTL Simulation |
-| SpyGlass | Lint, CDC, and RDC analysis |
-
-### Synthesis & Optimization
-| Tool | Purpose |
-|------|---------|
-| Synopsys Design Compiler | RTL synthesis |
-| Synopsys Formality | Formal equivalence checking |
-
-### Physical Design
-| Tool | Purpose |
-|------|---------|
-| Cadence Innovus | Place-and-route, CTS, routing |
-
-### Power & Signoff
-| Tool | Purpose |
-|------|---------|
-| PrimePower | Power analysis |
-| Calibre | DRC/LVS checks |
-
----
-
-## Getting Started
-
-### Prerequisites
-- Verilog/SystemVerilog knowledge
-- Familiarity with digital logic design
-- ASIC design flow understanding
-
-### Repository Use
-1. Start with the `rtl/` directory to inspect the design.
-2. Review the testbench in `Testbench/`.
-3. Review the consolidated results in `reports/`.
-4. Use `Spyglass2/lint_cdc.prj` and the waiver inputs in `Spyglass2/waivers/`
-   to inspect the SpyGlass configuration.
-5. Run `run.do` from ModelSim to compile and simulate the RTL testbench. The
-   script creates its work library when needed and uses `wave.do` for the
-   waveform setup.
-
----
-
-## Design Flow
-
-```text
-RTL Design
-   ↓
-Functional Simulation
-   ↓
-Lint + CDC + RDC Analysis
-   ↓
-Synthesis with Design Compiler
-   ↓
-Formal Equivalence Check
-   ↓
-DFT preparation
-   ↓
-Place & Route with Innovus
-   ↓
-Timing Closure
-   ↓
-DRC/LVS/Post-layout checks
-   ↓
-GDSII generation
+```tcl
+do run.do
 ```
 
----
+`run.do` compiles the listed RTL and testbench, starts `work.tb`, loads
+`wave.do`, and runs until the testbench's `$stop`. The current testbench applies
+configuration writes and ALU commands; it is a stimulus bench and does not
+automatically compare returned UART results against expected values.
 
-## Verification & Analysis
+## Verification and implementation
 
-- Self-checking Verilog testbench used for functional validation
-- SpyGlass used for lint, CDC, and RDC analysis
-- Synopsys Formality employed for equivalence checking
-- Cadence Innovus used for final physical implementation and timing closure
-- GDSII generation and post-layout checks completed
+Curated reports are under [`reports/`](reports/README.md). The checked-in
+results include:
 
----
+| Flow | Recorded result |
+| --- | --- |
+| Formality | Verification succeeded: 343 passing compare points, no failing compare points |
+| SpyGlass CDC verification | 0 failed properties; 4 partial proofs out of 6 properties |
+| SpyGlass RTL lint | Run summary records 1 waived error and 4 waived warnings; no non-waived errors or warnings |
+| Post-DFT test design rule check | 1 constant-one latch violation is reported |
+| PNR geometry and antenna checks | Reports state no geometry DRC violations and no antenna violations |
 
-## Results & Achievements
+These are the results present in the archived reports, not a claim that all
+signoff checks are clean. See [verification details](docs/verification-results.md)
+for important caveats and report locations.
 
-This design demonstrates a complete ASIC workflow from RTL to implementation, including:
+## Design document
 
-- Multi-clock RTL subsystem integration
-- Verification and validation of digital logic blocks
-- CDC-safe design implementation
-- Low-power clock gating techniques
-- Synthesis and timing optimization
-- Physical design and layout completion
-
----
-
-## Documentation
-
-See [`reports/README.md`](reports/README.md) for the report organization and
-selection criteria.
-
----
-
-## Contributing
-
-Suggestions and improvements are welcome. Please open an issue or submit a pull request with your proposed changes.
-
----
-
-## License
-
-This project is provided under the MIT License. See the LICENSE file for details.
-
----
-
-**Project Status:** Complete
+The supplied [Final System design PDF](docs/Final_System.pdf) is retained as
+the original system-level reference. Where it conflicts with the RTL, the
+implemented RTL behavior is identified in the repository notes.
