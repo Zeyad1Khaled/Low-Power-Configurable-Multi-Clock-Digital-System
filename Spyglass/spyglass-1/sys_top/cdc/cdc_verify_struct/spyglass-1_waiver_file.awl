@@ -1,4 +1,0 @@
-waive -rule {  {Setup_port01}  }  -comment {Created by ICer on 22-Sep-2026 21:49:24  rst port partial constraints}  -exact 
-waive -rule {  {Setup_port01}  }  -comment {Created by ICer on 22-Sep-2026 21:49:24  rst port partial constraints}  -exact 
-waive -rule {  {Reset_sync04}  }  -comment {Created by ICer on 23-Sep-2026 02:24:44}  -exact 
-waive -rule {  {Ac_conv02}  }  -comment {Created by ICer on 23-Sep-2026 02:48:30}  -exact 

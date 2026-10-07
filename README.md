@@ -129,58 +129,36 @@ Project Status: Complete (RTL through GDSII)
 ```text
 Low-Power-Configurable-Multi-Clock-Digital-System/
 ├── README.md
-├── LICENSE
+├── Cell_Library/
+├── FINAL_SYSTEM_RTL_INTEGRATION_Zeyad_Khaled.zip
 ├── rtl/
-│   ├── top_module.v
-│   ├── uart/
-│   ├── alu/
-│   ├── register_file/
-│   ├── fifo/
-│   ├── clock_management/
-│   ├── cdc/
-│   └── controller/
-├── tb/
-│   ├── top_tb.v
-│   ├── uart_tb.v
-│   ├── alu_tb.v
-│   ├── test_vectors/
-│   └── shared/
-├── sim/
-│   ├── compile.do
-│   ├── run.do
-│   └── waves/
-├── constraints/
-│   ├── timing.sdc
-│   ├── power.sdc
-│   ├── placement.tcl
-│   └── cdc_constraints.sdc
-├── synthesis/
-│   ├── scripts/
-│   ├── reports/
-│   └── netlist/
-├── implementation/
-│   ├── scripts/
-│   ├── reports/
-│   ├── gds/
-│   ├── lef/
-│   └── spef/
-├── verification/
-│   ├── lint_reports/
-│   ├── cdc_reports/
-│   ├── rdc_reports/
+│   ├── ALU/
+│   ├── ClkDiv_ClkGate/
+│   ├── DataSynch_RstSynch_PulseGen/
+│   ├── FIFO/
+│   ├── SYS_Control_RegisterFile/
+│   ├── System_Top/
+│   └── UART/
+├── Testbench/
+├── Spyglass2/
+│   ├── lint_cdc.prj
+│   ├── spy_cons.sgdc
+│   └── waivers/
+├── reports/
 │   ├── formality/
-│   └── post_layout/
-├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── DESIGN_FLOW.md
-│   ├── VERIFICATION_PLAN.md
-│   ├── CDC_REPORT.md
-│   ├── TIMING_ANALYSIS.md
-│   ├── DESIGN_DECISIONS.md
-│   └── CHANGELOG.md
-├── tools_versions.txt
-└── .gitignore
+│   ├── pnr/
+│   ├── spyglass2/
+│   └── synthesis/
+├── Synthesis_Formality_DFT/
+├── System_pnr/
+├── run.do
+└── wave.do
 ```
+
+The `reports/` directory contains the selected verification and implementation
+results, organized by tool and test. `Spyglass2/` retains the SpyGlass project
+configuration and its waiver inputs; its consolidated results are under
+`reports/spyglass2/`.
 
 ---
 
@@ -202,7 +180,6 @@ Low-Power-Configurable-Multi-Clock-Digital-System/
 | Tool | Purpose |
 |------|---------|
 | Cadence Innovus | Place-and-route, CTS, routing |
-| PrimeTime | Static timing analysis |
 
 ### Power & Signoff
 | Tool | Purpose |
@@ -221,9 +198,13 @@ Low-Power-Configurable-Multi-Clock-Digital-System/
 
 ### Repository Use
 1. Start with the `rtl/` directory to inspect the design.
-2. Review the testbenches in `tb/`.
-3. Examine reports in `verification/` and `synthesis/`.
-4. Read documentation in the `docs/` folder.
+2. Review the testbench in `Testbench/`.
+3. Review the consolidated results in `reports/`.
+4. Use `Spyglass2/lint_cdc.prj` and the waiver inputs in `Spyglass2/waivers/`
+   to inspect the SpyGlass configuration.
+5. Run `run.do` from ModelSim to compile and simulate the RTL testbench. The
+   script creates its work library when needed and uses `wave.do` for the
+   waveform setup.
 
 ---
 
@@ -278,7 +259,8 @@ This design demonstrates a complete ASIC workflow from RTL to implementation, in
 
 ## Documentation
 
-The repository includes detailed architecture and design notes in the `docs/` directory.
+See [`reports/README.md`](reports/README.md) for the report organization and
+selection criteria.
 
 ---
 
@@ -295,4 +277,3 @@ This project is provided under the MIT License. See the LICENSE file for details
 ---
 
 **Project Status:** Complete
-

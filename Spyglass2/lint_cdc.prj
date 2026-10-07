@@ -62,27 +62,26 @@ current_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
 
 
 current_goal lint/lint_rtl -top sys_top
-read_file -type awl ./spyglass-1/sys_top/lint/lint_rtl/spyglass-1_waiver_file.awl
-set_goal_option default_waiver_file ./spyglass-1/sys_top/lint/lint_rtl/spyglass-1_waiver_file.awl
+read_file -type awl ./waivers/lint_rtl.awl
+set_goal_option default_waiver_file ./waivers/lint_rtl.awl
 
 
 current_goal cdc/cdc_setup_check -top sys_top
-read_file -type awl ./lint_cdc/sys_top/cdc/cdc_setup_check/lint_cdc_waiver_file.awl
-set_goal_option default_waiver_file ./lint_cdc/sys_top/cdc/cdc_setup_check/lint_cdc_waiver_file.awl
+read_file -type awl ./waivers/cdc_setup_check.awl
+set_goal_option default_waiver_file ./waivers/cdc_setup_check.awl
 
 
 current_goal cdc/clock_reset_integrity -top sys_top
-read_file -type awl ./lint_cdc/sys_top/cdc/clock_reset_integrity/lint_cdc_waiver_file.awl
-set_goal_option default_waiver_file ./lint_cdc/sys_top/cdc/clock_reset_integrity/lint_cdc_waiver_file.awl
+read_file -type awl ./waivers/clock_reset_integrity.awl
+set_goal_option default_waiver_file ./waivers/clock_reset_integrity.awl
 
 
 current_goal cdc/cdc_verify_struct -top sys_top
-read_file -type awl ./lint_cdc/sys_top/cdc/cdc_verify_struct/lint_cdc_waiver_file.awl
-set_goal_option default_waiver_file ./lint_cdc/sys_top/cdc/cdc_verify_struct/lint_cdc_waiver_file.awl
+read_file -type awl ./waivers/cdc_verify_struct.awl
+set_goal_option default_waiver_file ./waivers/cdc_verify_struct.awl
 
 
 current_goal cdc/cdc_verify -top sys_top
-read_file -type awl ./lint_cdc/sys_top/cdc/cdc_verify/lint_cdc_waiver_file.awl
-set_goal_option default_waiver_file ./lint_cdc/sys_top/cdc/cdc_verify/lint_cdc_waiver_file.awl
+read_file -type awl ./waivers/cdc_verify.awl
+set_goal_option default_waiver_file ./waivers/cdc_verify.awl
 set_parameter fa_verif_cycles 4096
-

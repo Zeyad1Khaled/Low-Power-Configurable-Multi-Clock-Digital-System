@@ -1,6 +1,0 @@
-waive -rule {  {InferLatch}  }  -comment {Created by ICer on 22-Sep-2026 03:25:28  Intentional Latch for Clock Gating Cell, will be removed when instantiating the ICG Built-in Cell}  -exact 
-waive -rule {  {InferLatch}  }  -comment {Created by ICer on 22-Sep-2026 03:25:28  Intentional Latch for Clock Gating Cell, will be removed when instantiating the ICG Built-in Cell}  -exact 
-waive -msg {Clock signal 'sys_top.RX_CLK.div_clk_reg' used as a non-clock (Used with name 'sys_top.RX_CLK.div_clk_reg')}  -rule {  {STARC05-1.4.3.4}  }  -comment {Created by ICer on 22-Sep-2026 03:54:21}  -exact 
-waive -msg {Clock signal 'sys_top.TX_CLK.div_clk_reg' used as a non-clock (Used with name 'sys_top.TX_CLK.div_clk_reg')}  -rule {  {STARC05-1.4.3.4}  }  -comment {Created by ICer on 22-Sep-2026 03:54:21 div_clk_reg is the divider output state , its not used as an unrelated data clock/control signal }  -exact 
-waive -msg {Clock signal 'sys_top.TX_CLK.div_clk_reg' used as a non-clock (Used with name 'sys_top.TX_CLK.div_clk_reg')}  -rule {  {STARC05-1.4.3.4}  }  -comment {Created by ICer on 22-Sep-2026 03:54:21 div_clk_reg is the divider output state , its not used as an unrelated data clock/control signal }  -exact 
-waive -rule {  {W287b}  }  -comment {Created by ICer on 22-Sep-2026 03:57:40}  -exact 

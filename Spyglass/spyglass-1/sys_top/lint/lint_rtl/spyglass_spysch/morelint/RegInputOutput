@@ -1,5 +1,0 @@
-SCHEMA@@PName@@HierName
-VALUE@@REF_CLK@@sys_top
-VALUE@@UART_CLK@@sys_top
-VALUE@@RX_IN@@sys_top
-VALUE@@TX_OUT@@sys_top

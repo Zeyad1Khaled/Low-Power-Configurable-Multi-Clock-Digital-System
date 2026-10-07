@@ -1,9 +1,0 @@
-INPUT@@/home/ICer/UART_System/Spyglass2/spyglass-1/sys_top/dft/dft_scan_ready/spyglass_reports@@/home/ICer/UART_System/Spyglass2/spyglass-1/html_reports/data_files/@@sys_top@@dft-dft_scan_ready@@
-COPY@@/home/ICer/UART_System/Spyglass2/spyglass-1/sys_top/dft/dft_scan_ready/spyglass_reports/moresimple.rpt@@data_files/sys_top_dft-dft_scan_ready_moresimple.rpt@@
-COPY@@/home/ICer/UART_System/Spyglass2/spyglass-1/sys_top/dft/dft_scan_ready/spyglass_reports/no_msg_reporting_rules.rpt@@data_files/sys_top_dft-dft_scan_ready_no_msg_reporting_rules.rpt@@
-REGEN@@/home/ICer/UART_System/Spyglass2/spyglass-1/sys_top/dft/dft_scan_ready/spyglass_reports/dft/stuck_at_coverage.rpt@@data_files/sys_top_dft-dft_scan_ready_stuck_at_coverage.rpt.html@@
-REGEN@@/home/ICer/UART_System/Spyglass2/spyglass-1/sys_top/dft/dft_scan_ready/spyglass_reports/dft/stuck_at_coverage_audit.rpt@@data_files/sys_top_dft-dft_scan_ready_stuck_at_coverage_audit.rpt.html@@
-COPY@@/home/ICer/UART_System/Spyglass2/spyglass-1/sys_top/dft/dft_scan_ready/spyglass_reports/dft/stuck_at_coverage.rpt@@data_files/sys_top_dft-dft_scan_ready_stuck_at_coverage.rpt@@
-COPY@@/home/ICer/UART_System/Spyglass2/spyglass-1/sys_top/dft/dft_scan_ready/spyglass_reports/dft/stuck_at_coverage_audit.rpt@@data_files/sys_top_dft-dft_scan_ready_stuck_at_coverage_audit.rpt@@
-PROCESS@@dft@@SpyGlass
-COPY@@/home/ICer/UART_System/Spyglass2/spyglass-1/sys_top/dft/dft_scan_ready/spyglass.log@@data_files/sys_top_dft-dft_scan_ready_spyglass.log@@
