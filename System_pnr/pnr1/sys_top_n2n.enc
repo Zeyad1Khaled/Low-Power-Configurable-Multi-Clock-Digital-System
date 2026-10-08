@@ -1,8 +1,0 @@
-################################################
-#                                              #
-# Silicon Perspective, A Cadence Company       #
-# FirstEncounter Design Restore script         #
-#    for design session: sys_top_n2n.enc                     
-#                                              #
-################################################
-restoreDesign sys_top_n2n.enc.dat sys_top

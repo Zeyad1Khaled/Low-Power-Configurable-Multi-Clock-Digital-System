@@ -1,8 +1,0 @@
-################################################
-#                                              #
-# Silicon Perspective, A Cadence Company       #
-# FirstEncounter Design Restore script         #
-#    for design session: /home/ahesham/Projects/System/System_pnr/pnr/sys_top_post_power.enc                     
-#                                              #
-################################################
-restoreDesign /home/ahesham/Projects/System/System_pnr/pnr/sys_top_post_power.enc.dat sys_top
